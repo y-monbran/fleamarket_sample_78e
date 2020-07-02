@@ -5,6 +5,11 @@
 |nickname|string|null: false|
 |email|string|null false|
 |password|string|null: false|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|birthday|date|null: false|
 
 ### Association
 - has_many: profiles, dependent: :destroy
@@ -15,12 +20,12 @@
 - has_one :credit_card, dependent: :destroy
 
 
-## profilesテーブル
+## addressesテーブル
+
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|birthday|date|null: false|
 |post_code|integer(7)|null: false|
 |prefecture_code|integer|null: false|
 |city|string|null: false|
@@ -31,7 +36,7 @@
 
 ### Association
 - belongs_to :user
-
+- Gem：jp_prefecture
 
 ## productsテーブル
 |Column|Type|Option|
