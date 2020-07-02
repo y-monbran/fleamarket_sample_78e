@@ -5,6 +5,17 @@
 |nickname|string|null: false|
 |email|string|null false|
 |password|string|null: false|
+
+### Association
+- has_many: profiles, dependent: :destroy
+- has_many: comments, dependent: :destroy
+- has_many: histories, dependent: :destroy
+- has_many :seller_products, foreign_key: "seller_id", class_name: "products"
+- has_many :buyer_products, foreign_key: "buyer_id", class_name: "products"
+- has_one :credit_card, dependent: :destroy
+
+
+## profilesテーブル
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -16,13 +27,10 @@
 |house_number|string|null: true|
 |building_name|string|------|
 |phone_number|string|unique: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
-- has_many: comments, dependent: :destroy
-- has_many: histories, dependent: :destroy
-- has_many :seller_products, foreign_key: "seller_id", class_name: "products"
-- has_many :buyer_products, foreign_key: "buyer_id", class_name: "products"
-- has_one :credit_card, dependent: :destroy
+- belongs_to :user
 
 
 ## productsテーブル
@@ -86,7 +94,7 @@
 ## brandsテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|------|
+|name|string|null: false|
 
 ## Association
 - has_many :products
@@ -95,7 +103,7 @@
 ## categoriesテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|references|null: false, foreign_key: true|
+|name|string|null: false|
 
 ## Association
 - has_many :products
