@@ -1,0 +1,472 @@
+$main_color: #3CCACE;
+$main_width: 1040px;
+$main_visual_width: 1280px;
+$sub_width: 1020px;
+$pickup_width: 880px;
+
+@mixin shadow {
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+@mixin hover {
+  opacity: .7;
+  transition-duration: .5s;
+}
+
+#Header {
+  width: 100%;
+  min-width: $main_width;
+  padding: 15px 0;
+  .HeaderInner {
+    max-width: $main_width;
+    margin: 0 auto;
+    .HeaderBlock {
+      display: flex;
+      h1 {
+        img {
+          width: 141px;
+        }
+      }
+      .Form {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-left: 30px;
+        &__field {
+          width: 100%;
+        }
+        &__text {
+          width: 100%;
+          height: 36px;
+          padding: 0 0 0 5px;
+        }
+        &__search {
+          .btn {
+            width: 36px;
+            padding: 8px;
+            background: $main_color;
+            border: none;
+            cursor: pointer;
+            img {
+              width: 20px;
+            }
+            :hover {
+              @include hover;
+            }
+          }
+        }
+      }
+    }
+    #nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      a {
+        font-size: 14px;
+        color: #333333;
+        text-decoration: none;
+      }
+      .Select {
+        display: flex;
+        li {
+          margin-left: 50px;
+          &:first-child {
+            margin-left: 0;
+          }
+          a {
+            &:hover {
+              color: #ffb340;
+              transition-duration: .3s;
+            }
+          }
+        }
+      }
+      .Register {
+        display: flex;
+        li {
+          margin-left: 15px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+#Main {
+  .MainVisual {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 560px;
+    background: url(bg-mainVisual-pict_pc.jpg) top center no-repeat;
+    background-size: cover;
+    &__contents {
+      max-width: $main_visual_width;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 90px;
+    }
+    &__text {
+      h2 {
+        font-size: 60px;
+        @include shadow;
+      }
+    }
+    &__subtext {
+      margin-top: 16px;
+      font-size: 18px;
+      @include shadow;
+    }
+    .AppBtn {
+      margin-top: 24px;
+      img {
+        width: 180px;
+        &:hover {
+          @include hover;
+        }
+      }
+    }
+  }
+  .MainReason {
+    width: 100%;
+    .Contents {
+      max-width: $sub_width;
+      margin: 60px auto;
+      h2 {
+        position: relative;
+        padding-bottom: 15px;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        &:after {
+          position: absolute;
+          content: '';
+          width: 70px;
+          height: 4px;
+          bottom: 0;
+          left: 50%;
+          background: $main_color;
+          transform: translateX(-50%);
+        }
+      }
+      .Column {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        &__col {
+          position: relative;
+          width: calc((100% - 100px) / 3);
+          margin-left: 50px;
+          &:nth-child(3n+1) {
+            margin-left: 0;
+          }
+          figure {
+            width: 306px;
+            margin: 0 auto;
+            img {
+              width: 100%;
+            }
+          }
+          .One, .Two, .Three {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            padding: 10px 20px;
+            font-size: 30px;
+            color: #ffffff;
+            text-align: center;
+            background: $main_color;
+            border-radius: 4%;
+          }
+          .Detail {
+            padding: 35px 5px 5px;
+            &__title {
+              font-size: 24px;
+              font-weight: bold;
+              text-align: center;
+              &--strong {
+                color: $main_color;
+              }
+            }
+            &__text {
+              margin-top: 30px;
+              font-size: 18px;
+            }
+            .last {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .MainMiddle {
+    display: flex;
+    align-items: center;
+    height: 400px;
+    background: url(bg-topMiddleDl-pict.jpg) bottom right no-repeat;
+    background-size: cover;
+    &__contents {
+      max-width: $main_width;
+      width: 100%;
+      margin: 0 auto;
+    }
+    &__text {
+      h2 {
+        font-size: 27px;
+        @include shadow;
+      }
+    }
+    &__subtext {
+      margin-top: 16px;
+      font-size: 18px;
+      @include shadow;
+    }
+    .AppBtn {
+      margin-top: 24px;
+      img {
+        width: 180px;
+        &:hover {
+          @include hover;
+        }
+      }
+    }
+  }
+  .MainFeature {
+    width: 100%;
+    .Contents {
+      max-width: $sub_width;
+      margin: 60px auto;
+      h2 {
+        position: relative;
+        padding-bottom: 15px;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        &:after {
+          position: absolute;
+          content: '';
+          width: 70px;
+          height: 4px;
+          bottom: 0;
+          left: 50%;
+          background: $main_color;
+          transform: translateX(-50%);
+        }
+      }
+      .Column {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        &__col {
+          width: calc((100% - 100px) / 3);
+          margin-left: 50px;
+          &:nth-child(3n+1) {
+            margin-left: 0;
+          }
+          figure {
+            width: 219px;
+            margin: 0 auto;
+            img {
+              width: 100%;
+            }
+          }
+          .Detail {
+            padding: 35px 5px 5px;
+            &__title {
+              font-size: 19px;
+              font-weight: bold;
+              text-align: center;
+            }
+            &__text {
+              margin-top: 10px;
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.MainPickup {
+  width: 100%;
+  background: #f8f8f8;
+  &__box {
+    max-width: $pickup_width;
+    margin: 0 auto;
+    padding: 80px 0 0;
+    &:last-child {
+      padding: 80px 0 80px;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+      a {
+        font-size: 24px;
+        font-weight: bold;
+        color: $main_color;
+        text-decoration: none;
+      }
+    }
+    .Product {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 26px 0;
+      &__list {
+        width: calc(100% / 4);
+        a {
+          display: block;
+          text-decoration: none;
+          background: #ffffff;
+          &:hover {
+            @include hover;
+          }
+          figure {
+            position: relative;
+            width: 220px;
+            height: 150px;
+            margin: 0;
+            overflow: hidden;
+            z-index: auto;
+            img {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              height: 150px;
+              z-index: auto;
+              object-fit: cover;
+            }
+          }
+          .DetailBody {
+            padding: 16px;
+            color: #333333;
+            background: #ffffff;
+            ul {
+              display: flex;
+              justify-content: space-between;
+            }
+            .TaxIncluded {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.SellBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 120px;
+  text-align: center;
+  &__text {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  a {
+    display: block;
+    padding: 15px;
+    background: $main_color;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4%;
+    &:hover {
+      @include hover;
+    }
+    img {
+      width: 60%;
+    }
+  }
+}
+.AddBanner {
+  padding: 100px 40px;
+  background: url(bg-appBanner-pict.jpg) center no-repeat;
+  background-size: cover;
+  &__contents {
+    text-align: center;
+  }
+  &__text {
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      @include shadow;
+    }
+  }
+  &__subtext {
+    font-size: 35px;
+    @include shadow;
+  }
+  .AppBtn {
+    margin-top: 15px;
+    img {
+      width: 180px;
+      &:hover {
+        @include hover;
+      }
+    }
+  }
+}
+#Footer {
+  width: 100%;
+  padding: 60px 0;
+  background: #272727;
+  .FooterInner {
+    max-width: 840px;
+    margin: 0 auto;
+    .FooterContents {
+      display: flex;
+      text-align: center;
+      &__list {
+        width: calc(100% / 3);
+        .title {
+          margin-bottom: 20px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #ffffff;
+        }
+        ul {
+          li {
+            margin-top: 15px;
+            &:first-child {
+              margin-top: 0;
+            }
+            a {
+              font-size: 12px;
+              color: #ffffff;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .FooterLogo {
+      max-width: 160px;
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+      .Copyright {
+        font-size: 14px;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+}

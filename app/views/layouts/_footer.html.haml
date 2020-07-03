@@ -1,0 +1,54 @@
+.SellBtn
+  = link_to '#' do
+    %p.SellBtn__text
+      出品する
+    = image_tag 'icon_camera.png'
+.AddBanner
+  .AddBanner__contents
+    .AddBanner__text
+      %section
+        %h2
+          だれでもかんたん、人生を変えるフリマアプリ
+        %p.AddBanner__subtext
+          今すぐ無料ダウンロード！
+        .AppBtn
+          = link_to image_tag("app-store.svg", alt: "App Store"), "#", class: "AppBtn__apple"
+          = link_to image_tag("google-play.svg", alt: "Google Play"), "#", class: "AppBtn__google"
+%footer#Footer
+  .FooterInner
+    %ul.FooterContents
+      %li.FooterContents__list
+        %p.title
+          FURIMAについて
+        %ul
+          %li
+            = link_to "会社概要（運営会社）", "#"
+          %li
+            = link_to "プライバシーポリシー", "#"
+          %li
+            = link_to "FURIMA利用規約", "#"
+          %li
+            = link_to "ポイントに関する特約", "#"
+      %li.FooterContents__list
+        %p.title
+          FURIMAを見る
+        %ul
+          %li
+            = link_to "カテゴリー一覧", "#"
+          %li
+            = link_to "ブランド一覧", "#"
+      %li.FooterContents__list
+        %p.title
+          ヘルプ&amp;ガイド
+        %ul
+          %li
+            = link_to "FURIMAガイド", "#"
+          %li
+            = link_to "FURIMAロゴ利用ガイドライン", "#"
+          %li
+            = link_to "お知らせ", "#"
+    .FooterLogo
+      %p
+        = link_to image_tag("logo-white.png", alt: "FURIMA"), "#"
+      %p.Copyright
+        &copy; FURIMA
