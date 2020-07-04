@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 1216px;
+  width: 100%;
+  font-size: 14px;
+  background-color: rgb(245, 245, 245);
+  .header {
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .headerLogo {
+      .logo {
+        height: 49px;
+        width: 185px;
+      }
+    }
+  }
+
+  .main {
+    height: 868px;
+    display: flex;
+    justify-content: center;
+    .mainText {
+      width: 700px;
+      display: flex;
+      justify-content: center;
+      background-color: rgb(255, 255, 255);
+      &__lists {
+        height: 868px;
+        width: 375px;
+        &--1 {
+          height: 98px;
+          font-size: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .textBox1 {
+            height: 34px;
+          }
+        }
+        &--2 {
+          height: 145px;
+          border-top: 1px solid rgb(245, 245, 245);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .textBox2 {
+            height: 80px;
+            width: 343px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            .itemImage {
+              width: 80px;
+            }
+            .itemInfo {
+              width: 247px;
+              .itemName {
+                height: 38px;
+              }
+              .itemPrice {
+                height: 15px;
+                font-size: 12px;
+                margin-top: 8px;
+              }
+            }
+          }
+        }
+        &--3 {
+          height: 133px;
+          border-top: 1px solid rgb(245, 245, 245);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .textBox3 {
+            height: 68px;
+            width: 343px;
+            .payment {
+              height: 24px;
+              font-size: 18px;
+              display: flex;
+              justify-content: space-between;
+              .paymentText {
+                width: 90px;
+              }
+              .paymentAmount {
+                width: 74px;
+              }
+            }
+            .usePoints {
+              height: 20px;
+              margin-top: 24px;
+            }
+          }
+        }
+        &--4 {
+          height: 103px;
+          border-top: 1px solid rgb(245, 245, 245);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .textBox4 {
+            height: 38px;
+            width: 343px;
+            .paymentMethod {
+              height: 22px;
+            }
+            .cardInfo {
+              height: 16px;
+            }
+          }
+        }
+        &--5 {
+          height: 105px;
+          border-top: 1px solid rgb(245, 245, 245);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .textBox5 {
+            height: 40px;
+            width: 343px;
+            .shippingText {
+              height: 22px;
+            }
+            .addressInfo {
+              height: 18px;
+            }
+          }
+        }
+        &--6 {
+          height: 284px;
+          border-top: 1px solid rgb(245, 245, 245);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .textBox6 {
+            height: 203px;
+            width: 343px;
+            .precautions {
+              height: 84px;
+              margin-bottom: 24px;
+            }
+            .headsUp {
+              height: 21px;
+              margin-bottom: 24px;
+              color: rgb(255, 2, 17);
+              text-align: center;
+            }
+            .purchaseButton {
+              height: 50px;
+              #button {
+                height: 50px;
+                width: 343px;
+                border: none;
+                border-radius: 5px;
+                color: #fff;
+                background-color: #3CCACE;
+              }
+            }
+          }
+        }       
+      }
+    }
+  }
+
+  .footer {
+    height: 220px;
+    font-size: 12px;
+    padding: 40px 0;
+    text-align: center;
+    .footerText {
+      height: 67px;
+      padding-bottom: 40px;
+      &__lists {
+        display: flex;
+        justify-content: center;
+        li {
+          margin-right: 15px;
+        }
+      }
+    }
+    .footerLogo {
+      height: 65px;
+      .logo {
+        height: 49px;
+        width: 185px;
+      }
+    }
+    .footerCompany {
+      height: 12px;
+    }
+  }
+}
