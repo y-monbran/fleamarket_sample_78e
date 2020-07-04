@@ -1,0 +1,23 @@
+%header#Header
+  .HeaderInner
+    .HeaderBlock
+      %h1
+        = link_to image_tag("logo.png", alt: "FURIMA"), "#"
+      = form_with local: true, method: :get, class: "Form" do |form|
+        .Form__field
+          = form.text_field :content, placeholder: "キーワードから探す", class: "Form__text"
+        .Form__search
+          %button{type: "submit", class:'btn'}
+            = image_tag "icon-search 1.png"
+
+    %nav#nav
+      %ul.Select
+        %li.Select__category
+          = link_to "カテゴリー", "#"
+        %li.Select__brand
+          = link_to "ブランド", "#"
+      %ul.Register
+        %li.Register__login
+          = link_to "ログイン", "#"
+        %li.Register__new
+          = link_to "新規会員登録", "#"
