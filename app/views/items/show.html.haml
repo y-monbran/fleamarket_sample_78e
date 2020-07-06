@@ -11,6 +11,7 @@
         -# = image_tag "product02.png", class: "Item__content--photo--one"
       -# %li.Item__content--photo#tab3
         -# = image_tag "product03.png", class: "Item__content--photo--one"
+          -# 今後js実装の際に、サブ写真をクリックしたらメイン写真が切り替わる機能を実装するために、仮で記入しています。
     %ul.Item__select
       %li.Item__select--image#select1
         = image_tag "product01.png", class: "Item__content--image--one"
@@ -39,13 +40,13 @@
         %th.Item__table--th
           カテゴリー
         %td.Item__table--td
-          %a.Item__table--td--link{href:"#"}
+          = link_to "#", class:"Item__table--td--link" do
             %div.Item__table--td--link--name
               レディース
-          %a.Item__table--td--link{href:"#"}
+          = link_to "#", class:"Item__table--td--link" do
             %div.Item__table--td--link--name
               ワンピース
-          %a.Item__table--td--link{href:"#"}
+          = link_to "#", class:"Item__table--td--link" do
             %div.Item__table--td--link--name
               ひざ丈ワンピース
       %tr
@@ -67,7 +68,7 @@
         %th.Item__table--th
           配送元地域
         %td.Item__table--td
-          %a.Item__table--td--link{href:"#"}
+          = link_to "#", class:"Item__table--td--link" do
             %div.Item__table--td--link--name
               未定
       %tr
@@ -75,7 +76,7 @@
           発送日の目安
         %td.Item__table--td
           ４〜７日で発送
-    %a.Item__buy{href:"#"}
+    = link_to "#", class:"Item__buy" do
       購入画面に進む
     .Item__action
       .Item__action--favorite
@@ -93,13 +94,16 @@
         = form.submit value: "コメントする", class: "Comments__comment--form--submit"
   .Next
     .Next__box
-      %a.Next__box--left
+      = link_to "#", class:"Next__box--left" do
         前の商品
-      %a.Next__box--right
+      = link_to "#", class:"Next__box--right" do
         後ろの商品
     .Next__other
       .Next__other--category
         %h2.Next__other--category--head
-          %a.Next__other--category--head--name{href:"#"}ベビー・キッズをもっと見る
+          = link_to "#", class:"Next__other--category--head--name" do
+            ベビー・キッズをもっと見る
 
 = render "./layouts/footer"
+
+
