@@ -1,0 +1,165 @@
+%body
+  .default-container
+    %header.sp-header.visible-sp
+    %nav.bread-crumbs
+      %ol{:itemscope => "", :itemtype => "https://schema.org/BreadcrumbList"}
+        %li{:itemprop => "itemListElement", :itemscope => "", :itemtype => ""}
+          %a{:href => "", :itemprop => "item"}
+            %span{:itemprop => "name"} メルカリ
+          %meta{:content => "1", :itemprop => "position"}/
+          %i.fas.fa-angle-right
+        %li{:itemprop => "itemListElement", :itemscope => "", :itemtype => ""}
+          %span{:itemprop => "name"} マイページ
+          %meta{:content => "2", :itemprop => "position"}/
+    %main.l-container.clearfix
+      .l-content
+        %section.mypage-user-icon
+          %a{:href => ""}
+            %figure
+              %img{:alt => "画像", :src => "http://momo.gmobb.jp/hikari.kobayashi1212/face.png", :width => "100%"}/
+            %h2.bold Y K
+            .mypage-number
+              %div
+                評価
+                %span.bold 0
+              %div
+                出品数
+                %span.bold 0
+        %section.mypage-tab-container-notification-todo
+          %ul.mypage-tabs
+            %li.active
+              %h3
+                %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"} お知らせ
+            %li
+              %h3
+                %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+                  やることリスト
+                  %span.mypage-nav-number.hidden-large
+          .tab-content
+            %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold お知らせの商品がありません
+            %ul#mypage-tab-todo.mypage-item-list.tab-pane
+              %li
+                %a.mypage-item-link{:href => ""}
+                  %figure
+                    %img.lazyload{:alt => "", "data-src" => ""}/
+                  %i.fas.fa-angle-right
+        %section.mypage-tab-container
+          %h2.mypage-tab-head 購入した商品
+          %ul.mypage-tabs
+            %li.active
+              %h3
+                %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"} 取引中
+            %li
+              %h3
+                %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"} 過去の取引
+          .tab-content
+            %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold 取引中の商品がありません
+            %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+              %li.mypage-item-not-found.bold 過去に取引した商品がありません
+      .l-side
+        %nav.mypage-nav
+          %ul.mypage-nav-list
+            %li
+              %a.mypage-nav-list-item.active{:href => "/jp/mypage/"}
+                マイページ
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/notification/"}
+                お知らせ
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/todo/"}
+                やることリスト
+                %span.mypage-nav-number 1
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/like/history/"}
+                いいね！一覧
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/sell/"}
+                出品する
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/drafts/"}
+                下書き一覧
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/listings/listing/"}
+                出品した商品 - 出品中
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/listings/in_progress/"}
+                出品した商品 - 取引中
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/listings/completed/"}
+                出品した商品 - 売却済み
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/purchase/"}
+                購入した商品 - 取引中
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/purchased/"}
+                購入した商品 - 過去の取引
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/news/"}
+                ニュース一覧
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/review/history/"}
+                評価一覧
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/help_center/"}
+                ガイド
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/support/"}
+                お問い合わせ
+                %i.fas.fa-angle-right
+          %h3.mypage-nav-head メルペイ
+          %ul.mypage-nav-list
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/sales/"}
+                売上・振込申請
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/point/"}
+                ポイント
+                %i.fas.fa-angle-right
+          %h3.mypage-nav-head 設定
+          %ul.mypage-nav-list
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/profile/"}
+                プロフィール
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/deliver_address/"}
+                発送元・お届け先住所変更
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/card/"}
+                支払い方法
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/email_password/"}
+                メール/パスワード
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/identification/"}
+                本人情報
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/mypage/sms_confirmation/"}
+                電話番号の確認
+                %i.fas.fa-angle-right
+            %li
+              %a.mypage-nav-list-item{:href => "/jp/logout/"}
+                ログアウト
+                %i.fas.fa-angle-right
+    .overlay
