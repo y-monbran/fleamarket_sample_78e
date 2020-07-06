@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+img {
+  vertical-align: bottom;
+}
+$main_color: #3CCACE;
+
+.Items{
+  background-color: #F8F8F8;
+  padding: 30px 0;
+}
+.Item {
+  background-color: #fff;
+  padding: 24px 40px 40px;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  &__name {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__content {
+    text-align: center;
+    &--photo {
+      &--main {
+        object-fit: cover;
+        height: 346px;
+      }
+    }
+  }
+  &__select {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    &--image {
+        margin-right: 10px;
+      &--one {
+        object-fit: cover;
+        height: 87px;
+      }
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  &__price {
+    &--body {
+      font-size: 46px;
+      font-weight: bold;
+    }
+    &--taxes {
+      font-size: 16px;
+    }
+  }
+  &__introduce {
+    &--innner {
+      line-height: 1.5;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+  &__table {
+    margin-left: auto;
+    margin-right: auto;
+    &--th {
+      width: 20%;
+      background-color: #eee;
+      font-weight: 400;
+      padding: 8px;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      text-align: center;
+    }
+    &--td {
+      width: 61%;
+      padding: 15px 15px;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      &--link {
+        text-decoration: none;
+        &--name {
+          color: $main_color;
+        }
+      }
+    }
+  }
+  &__buy {
+    font-size: 30px;
+    text-decoration: none;
+    background-color: $main_color;
+    color: #fff;
+    border-radius: 1rem;
+    display: block;
+    width: 300px;
+    margin: 10px auto;
+  }
+  &__action {
+    display: flex;
+    &--favorite {
+      color: $main_color;
+      margin-right: auto;
+      padding: 6px 10px;
+      border-radius: 40px;
+      border: 1px solid #ffb340;
+    }
+    &--report {
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: #333;
+      border: 1px solid #333;
+    }
+  }
+}
+
+.Comments {
+  margin-top: 10px;
+  @extend.Item;
+  &__comment {
+    &--form {
+      &--comment {
+        width: 100%;
+        min-height: 104px;
+        padding: 10px;
+      }
+      &--explain {
+        padding: 8px;
+        font-size: 14px;
+        background-color: #f8f8f8;
+        margin: 10px 0;
+        text-align: left;
+      }
+      &--submit {
+        margin: 10px 0px;
+        line-height: 48px;
+        background: $main_color;
+        border: 1px solid $main_color;
+        color: #fff;
+        width: 60%;
+        font-size: 18px;
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
+.Next {
+  width: 700px;
+  margin: 0 auto;
+  &__box {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    &--left {
+      text-decoration: none;
+      color: $main_color;
+      display: block;
+    }
+    &--right {
+      @extend.Next__box--left;
+    }
+  }
+  &__other {
+    &--category {
+      &--head {
+        &--name {
+          text-decoration: none;
+          color: $main_color;
+          display: block;
+          margin: 24px 0 0;
+          font-weight: bold;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

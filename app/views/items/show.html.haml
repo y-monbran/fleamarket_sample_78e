@@ -1,0 +1,105 @@
+= render "./layouts/header"
+
+.Items
+  .Item
+    %h1.Item__name
+      総手植え ヘアピース ウィッグ
+    %ul.Item__content
+      %li.Item__content--photo#tab1
+        = image_tag "product01.png", class: "Item__content--photo--main"
+      -# %li.Item__content--photo#tab2
+        -# = image_tag "product02.png", class: "Item__content--photo--one"
+      -# %li.Item__content--photo#tab3
+        -# = image_tag "product03.png", class: "Item__content--photo--one"
+    %ul.Item__select
+      %li.Item__select--image#select1
+        = image_tag "product01.png", class: "Item__content--image--one"
+      %li.Item__select--image#select2
+        = image_tag "product02.png", class: "Item__content--image--one"
+      %li.Item__select--image#select3
+        = image_tag "product03.png", class: "Item__content--image--one"
+    .Item__price
+      %span.Item__price--body
+        3500円
+      .Item__price--taxes
+      %span.Item__price--taxes--tax
+        （税込）
+      %span.Item__price--taxes--post
+        送料込み
+    .Item__introduce
+      .Item__introduce--innner
+        シワになりにくい素材の年中着用いただける上品なワンピースです。
+    %table.Item__table
+      %tr
+        %th.Item__table--th
+          出品者
+        %td.Item__table--td
+          ゆゆちむ
+      %tr
+        %th.Item__table--th
+          カテゴリー
+        %td.Item__table--td
+          %a.Item__table--td--link{href:"#"}
+            %div.Item__table--td--link--name
+              レディース
+          %a.Item__table--td--link{href:"#"}
+            %div.Item__table--td--link--name
+              ワンピース
+          %a.Item__table--td--link{href:"#"}
+            %div.Item__table--td--link--name
+              ひざ丈ワンピース
+      %tr
+        %th.Item__table--th
+          商品のサイズ
+        %td.Item__table--td
+          M
+      %tr
+        %th.Item__table--th
+          商品の状態
+        %td.Item__table--td
+          目立った傷や汚れなし
+      %tr
+        %th.Item__table--th
+          配送料の負担
+        %td.Item__table--td
+          送料込み（出品者負担）
+      %tr
+        %th.Item__table--th
+          配送元地域
+        %td.Item__table--td
+          %a.Item__table--td--link{href:"#"}
+            %div.Item__table--td--link--name
+              未定
+      %tr
+        %th.Item__table--th
+          発送日の目安
+        %td.Item__table--td
+          ４〜７日で発送
+    %a.Item__buy{href:"#"}
+      購入画面に進む
+    .Item__action
+      .Item__action--favorite
+        お気に入り
+      .Item__action--report
+        不適切な商品の通報
+  .Comments
+    .Comments__comment
+      = form_with class: "Comments__comment--form", local: true do |form|
+        = form.text_area :comment, class: "Comments__comment--form--comment"
+        .Comments__comment--form--explain
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = form.submit value: "コメントする", class: "Comments__comment--form--submit"
+  .Next
+    .Next__box
+      %a.Next__box--left
+        前の商品
+      %a.Next__box--right
+        後ろの商品
+    .Next__other
+      .Next__other--category
+        %h2.Next__other--category--head
+          %a.Next__other--category--head--name{href:"#"}ベビー・キッズをもっと見る
+
+= render "./layouts/footer"
