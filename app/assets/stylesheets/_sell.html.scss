@@ -1,0 +1,179 @@
+$main-color: #3ccace;
+$main_width: 1040px;
+$main_visual: 1280px;
+$sub_width: 1020px;
+$pickup_width: 880px;
+
+* {
+  box-sizing: border-box;
+}
+
+.Sell{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: lightgray;
+  &__page{
+    &__header{
+      margin:40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 40px;
+        width: 140px;
+      }
+    }
+    &__body{
+      margin: 0 auto;
+      width: 620px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__img{
+        height: 240px;
+        border-bottom: 1px solid lightgray;
+        padding: 40px;
+      }
+      &__info{
+        border-bottom: 1px solid lightgray;
+        padding: 40px;
+        &__name{
+          margin-bottom: 16px;
+          &__form{
+            width:540px;
+            padding: 15px;
+            margin-bottom: 16px;
+          }
+        }
+        &__explain{
+          margin-bottom: 16px;
+          &__form{
+            width: 540px;
+            height: 126px;
+          }
+        }
+      }
+      &__details{
+        border-bottom: 1px solid lightgray;
+        padding: 40px 0;
+        &__category{
+          margin-top: 16px;
+        }
+      }
+      &__delivary{
+        border-bottom: 1px solid lightgray;
+        padding: 40px 0;
+        &__top{
+          color: lightgray;
+        }
+        &__burden{
+          margin-top:16px;
+        }
+      }
+      &__prices{
+        border-bottom: 1px solid lightgray;
+        padding: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        &__yen{
+          margin:30px;
+          &__form{
+            padding:15px;
+          }
+        }
+        &__1{
+          margin-bottom: 16px;
+          color: lightgray;
+          &__sale{
+            color: black;
+            &__place{
+              margin-top: 16px;
+              font-weight: bold;
+            }
+          }
+          &__fee{
+            margin-top: 16px;
+            &__profit{
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+      &__last{        
+        padding: 40px 0 0 0;
+        font-size:17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__send{
+          height: 50px;
+          margin-bottom:20px;
+          #button{
+            height: 50px;
+            width: 372px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: red;
+          }
+        }
+        &__draft{
+          height: 50px;
+          #button{
+            height: 50px;
+            width: 372px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: lightgray;
+          }
+        }
+        &__return{
+          margin: 16px 0;
+        }
+        &__note{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.Sell__page__footer{
+  font-size: 10px;
+  margin: 10px 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  &__item{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+img{
+  height: 40px;
+  width: 140px;
+}
+
+span{
+  background-color: red;
+  color: white;
+}
+
+.form{
+  width:540px;
+  padding: 15px;
+  margin: 16px 0;
+}
+
+a{
+  text-decoration: none;
+}
