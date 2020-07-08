@@ -1,159 +1,83 @@
-.body
-  .default-container
-    .sp-header.visible-sp
-    .bread-crumbs
-      
-      .fas.fa-angle-right
+.Mypage
+  
+  .main
+    .main__user
+      = image_tag "http://momo.gmobb.jp/hikari.kobayashi1212/face.png"
+
+    .main__userstatus
+      .main__evaluation
+        評価 0
+      .main__xhibition
+        出品数 0
+  .sub
+    .sub__newsl
+      .sub__newsl__newss
+        %bお知らせ
+    .sub__actionlistl
+      .sub__actionlistl__actionlist
+        %bやることリスト
+
+  .sub2
+    .sub2__item
+      %b購入した商品
+    .sub2__transactions
+      .sub2__transactions__transactionnow
+        .sub2__transactions__transactionnow__name
+          %b取引中
+      .sub2__transactions__transactionpast
+        .sub2__transactions__transactionpast__name
+          %b過去の取引
         
-    .l-container.clearfix
-      .l-content
-        .mypage-user-icon
-          %a{:href => ""}
-            %figure
-              %img{:alt => "画像", :src => "http://momo.gmobb.jp/hikari.kobayashi1212/face.png", :width => "100%"}/
-            %h2.bold Y K
-            .mypage-number
-              %div
-                評価
-                %span.bold 0
-              %div
-                出品数
-                %span.bold 0
-        .mypage-tab-container-notification-todo
-          .mypage-tabs
-            %li.active
-              %h3
-                %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"} お知らせ
-            %li
-              %h3
-                %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
-                  やることリスト
-                  .mypage-nav-number.hidden-large
-          .tab-content
-            %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
-              %li.mypage-item-not-found.bold お知らせの商品がありません
-            %ul#mypage-tab-todo.mypage-item-list.tab-pane
-              %li
-                .mypage-item-link{:href => ""}
-                  %figure
-                    %img.lazyload
-                  %i.fas.fa-angle-right
-        %section.mypage-tab-container
-          %h2.mypage-tab-head 購入した商品
-          %ul.mypage-tabs
-            %li.active
-              %h3
-                %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"} 取引中
-            %li
-              %h3
-                %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"} 過去の取引
-          .tab-content
-            %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
-              %li.mypage-item-not-found.bold 取引中の商品がありません
-            %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
-              %li.mypage-item-not-found.bold 過去に取引した商品がありません
-      .l-side
-        .mypage-nav
-          %ul.mypage-nav-list
-            %li
-              .mypage-nav-list-item.active
-                マイページ
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                お知らせ
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                やることリスト
-                %span.mypage-nav-number
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                いいね！一覧
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                出品する
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                下書き一覧
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                出品した商品 - 出品中
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                出品した商品 - 取引中
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                出品した商品 - 売却済み
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                購入した商品 - 取引中
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                購入した商品 - 過去の取引
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                ニュース一覧
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                評価一覧
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                ガイド
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                お問い合わせ
-                %i.fas.fa-angle-right
-          %h3.mypage-nav-head メルペイ
-          %ul.mypage-nav-list
-            %li
-              .mypage-nav-list-item
-                売上・振込申請
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                ポイント
-                %i.fas.fa-angle-right
-          %h3.mypage-nav-head 設定
-          %ul.mypage-nav-list
-            %li
-              .mypage-nav-list-item
-                プロフィール
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                発送元・お届け先住所変更
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                支払い方法
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                メール/パスワード
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                本人情報
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                電話番号の確認
-                %i.fas.fa-angle-right
-            %li
-              .mypage-nav-list-item
-                ログアウト
-                %i.fas.fa-angle-right
-    .overlay
+  .details
+    .details__mypage.border
+      マイページ 
+    .details__news.border
+      お知らせ
+    .details__action.border
+      やることリスト
+    .details__good.border
+      いいね！いいね！一覧
+    .details__exhibition.border
+      出品する
+    .details__draft.border
+      下書き一覧
+    .details__exhibitionnow.border
+      出品した商品-出品中
+    .details__transactionnow.border
+      購入した商品-取引中
+    .details__sale.border
+      出品した商品-売却済み
+    .details__purchase.border
+      購入した商品-取引中
+    .details__purchasepast.border
+      購入した商品-過去の取引
+    .details__news.border
+      ニュース一覧
+    .details__evaluations.border
+      評価一覧
+    .details__guide.border
+      ガイド
+    .details__contact.border
+      お問い合わせ
+    .details__merupay.border
+      メルペイ
+    .details__sales.border
+      売り上げ・振り込み申請
+    .details__point.border
+      ポイント
+    .details__configuration.border
+      設定
+    .details__profile.border
+      プロフィール
+    .details__shippingaddress.border
+      発送元・お届け先住所変更
+    .details__payment.border
+      お支払い方法
+    .details__mailpass.border
+      メール/パスワード
+    .details__information.border
+      本人情報
+    .details__tell.border
+      電話番号の確認
+    .details__logout.border.bottom
+      ログアウト
