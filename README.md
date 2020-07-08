@@ -52,7 +52,7 @@
 <!-- |size|references|null: false, foreign_key: true| -->
 |preparation_day|references|null: false, foreign_key: true|
 <!-- |postage_type|references|null: false, foreign_key: true| -->
-|item_img|references|null: false, foreign_key: true|
+<!-- |item_img|references|null: false, foreign_key: true| -->
 |category|references|null: false, foreign_key: true|
 <!-- |trading_status|enum|null: false| -->
 |seller|references|null: false, foreign_key: true|
