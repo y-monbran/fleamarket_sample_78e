@@ -48,11 +48,11 @@
 <!-- |brand|references|foreign_key: true| -->
 |item_condition|references|null: false, foreign_key: true|
 |postage_payer|references|null: false, foreign_key: true|
-|prefecture_code|integer|null: false|
+|prefecture_code|references|null: false, foreign_key: true|
 <!-- |size|references|null: false, foreign_key: true| -->
 |preparation_day|references|null: false, foreign_key: true|
 <!-- |postage_type|references|null: false, foreign_key: true| -->
-|item_img|references|null: false, foreign_key: true|
+<!-- |item_img|references|null: false, foreign_key: true| -->
 |category|references|null: false, foreign_key: true|
 <!-- |trading_status|enum|null: false| -->
 |seller|references|null: false, foreign_key: true|
