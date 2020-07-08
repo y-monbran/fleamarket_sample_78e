@@ -30,4 +30,41 @@ ActiveRecord::Schema.define(version: 2020_07_06_014948) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+ActiveRecord::Schema.define(version: 2020_07_08_020137) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "item_imgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "url", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_imgs_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.integer "price", null: false
+    t.integer "postage_payer_id", null: false
+    t.integer "item_condition_id", null: false
+    t.integer "prefecture_code_id", null: false
+    t.integer "preparation_day_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "seller_id", null: false
+    t.bigint "buyer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
+  end
+
+  add_foreign_key "item_imgs", "items"
+
 end
