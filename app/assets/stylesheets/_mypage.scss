@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+.Mypage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(243, 242, 242);
+  padding: 30px;
+  
+
+  .main {
+    background-color: #3CCACE;
+    width: 1200px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &__userstatus{
+      display: flex;
+    }
+  }    
+  .sub {
+    width: 1200px;
+    height: 320px;
+    display: flex;
+    background-color:#f5f5f5;
+    
+    &__newsl{
+      width: 600px;
+      height: 320px;
+      border: solid 1px rgb(231, 229, 229);
+      border-top: solid 2px gray;
+      
+      &__newss{
+        width: 600px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px rgb(231, 229, 229);
+        background: rgb(212, 210, 210);
+      }
+    }
+    &__actionlistl{
+      width: 600px;
+      height: 320px;
+      border: solid 1px rgb(231, 229, 229);
+      border-top: solid 2px gray;
+
+      &__actionlist{
+        width: 600px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px rgb(231, 229, 229);
+        background: rgb(212, 210, 210);
+        
+      } 
+    } 
+  } 
+  .sub2 {
+    margin: 30px;
+    width: 1200px;
+    height: 400px;
+    background-color:#f5f5f5;
+
+    &__item{
+      width: 1200px;
+      height: 80px;
+      display: flex;
+      background-color: rgb(212, 210, 210);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color:rgb(228, 225, 225);
+    }
+      
+    &__transactions{
+      width: 1200px;
+      height: 320px;
+      display: flex;
+    
+      &__transactionnow{
+        background-color: #f5f5f5;
+        border: solid 1px rgb(231, 229, 229);
+        width: 600px;
+        height: 320px;
+
+        &__name{
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color:rgb(212, 210, 210);
+        }
+
+      }
+        
+      &__transactionpast{
+        background-color: v#f5f5f5;
+        border: solid 1px rgb(231, 229, 229);
+        width: 600px;
+        height: 320px;
+        
+        &__name{
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color:rgb(212, 210, 210);
+        }
+
+      }
+    }
+  }
+
+  .details {
+    width:500px;
+    height: 1300px;
+    background-color: #f5f5f5;
+    
+    &__mypage{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__news{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__action{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__good{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__exhibition{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__draft{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__exhibitionnow{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__transactionnow{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__sale{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__purchase{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+   &__purchasepast{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+   }
+      
+    &__news{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__evaluations{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__guide{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__contact{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__merupay{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__sales{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__point{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__configuration{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__profile{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__shippingaddress{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__payment{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__mailpass{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__information{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+      
+    &__tell{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+
+    &__logout{
+      height: 50px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+
+    }
+
+    .border{
+      border-top: solid 1px rgb(231, 229, 229);
+      border-left: solid 1px rgb(231, 229, 229);
+      border-right: solid 1px rgb(231, 229, 229);
+    }
+    .bottom{
+      border-bottom: solid 1px rgb(231, 229, 229);
+    }
+  }   
+}

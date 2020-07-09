@@ -8,8 +8,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :prefecture_code
   belongs_to_active_hash :preparation_day
-  belongs_to :seller, class_name: "User"
-  belongs_to :buyer, class_name: "User"
+  belongs_to :seller, class_name: "User", optional: true
+  belongs_to :buyer, class_name: "User", optional: true
+
+  accepts_nested_attributes_for :item_imgs, allow_destroy: true
 
   with_options presence: true do
     validates :name
@@ -19,8 +21,8 @@ class Item < ApplicationRecord
     validates :postage_payer
     validates :prefecture_code
     validates :preparation_day
-    validates :item_img
+    validates :item_imgs
     validates :category
-    validates :seller
+    # validates :seller
   end
 end
