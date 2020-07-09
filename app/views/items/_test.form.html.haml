@@ -1,0 +1,21 @@
+= form_for @item do |f|
+  -# 商品名
+  -# = f.text_field :name
+  -# 価格
+  -# = f.number_field :price
+  = f.fields_for :images do |image|
+    -# <div data-index="<%= image.index %>" class="js-file_group">をhamlに   
+    -# .js-file_group{data: {index: image.index}} ???
+    .js-file_group{"data-index" => image.index}
+      = image.file_field :src, class: 'js-file'
+      %span.js-remove
+      = link_to '削除', item_path(:item), method: :delete
+    - if @item.persisted?
+      = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+  - if @item.persisted?
+    -# <div data-index="<%= @product.images.count %>" class="js-file_group">をhamlに
+    .js-file_group{"data-index" => @product.image.index}
+      = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+      .js-remove
+      = link_to '削除', product_path(:product), method: :delete
+  = f.submit

@@ -23,4 +23,6 @@ class Item < ApplicationRecord
     validates :category
     validates :seller
   end
+
+  mount_uploader :image, ImageUploader
 end
