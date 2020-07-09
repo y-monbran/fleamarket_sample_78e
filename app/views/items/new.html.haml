@@ -27,7 +27,7 @@
           商品の詳細
           .Sell__page__body__details__category
             カテゴリー
-          -# = f.select :category_id, class: "form", placeholder: "選択してください"
+          = f.collection_select :category_id, Category.all, :id, :name, {}, {class: "form", placeholder:"選択してください"}
           .Sell__page__body__details__bland
           -#   ブランド
           -# = f.text_field :bland, class: "form", placeholder:"例）シャネル"

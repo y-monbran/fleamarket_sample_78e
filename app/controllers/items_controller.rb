@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :set_categories, only: [edit new]
+
   def index
     @items = Item.includes(:item_imgs).order('created_at DESC')
   end
@@ -26,5 +29,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :postage_payer_id, :item_condition_id, :prefecture_code_id, :preparation_day_id, item_imgs_attributes: [:url])
   end
+
+  def set_categories
+    @parent_categories = Category.roots
+    @default_child_categories = @parent_categories.first.children
+    @default_grandchild_categories = @default_child_categories.first.children
+   end
 
 end

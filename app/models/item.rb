@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites
   has_many :item_imgs, dependent: :destroy
-  belongs_to :category, optional: true
+  belongs_to :category
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :item_condition
   belongs_to_active_hash :postage_payer
@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     validates :prefecture_code
     validates :preparation_day
     validates :item_imgs
-    # validates :category
+    validates :category
     # validates :seller
   end
 end
