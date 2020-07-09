@@ -76,3 +76,8 @@ gem 'ancestry'
 # active_hash
 gem 'active_hash'
 
+# jQuery
+gem 'jquery-rails'
+
+# Font Awesome
+gem "font-awesome-sass"
