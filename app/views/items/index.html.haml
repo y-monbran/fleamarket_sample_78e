@@ -135,19 +135,16 @@
                   %p.TaxIncluded
                     (税込)
             .Product__list
-              = link_to '#' do
-                %figure
-                  = image_tag 'product3.png'
-                .DetailBody
-                  .DetailBody__title
-                    product1
-                  %ul
-                    %li
-                      1000円
-                    %li
-                      ★0
-                  %p.TaxIncluded
-                    (税込)
+              .ImgBody
+                - @item_imgs.each do |i|
+                  = image_tag i.item.to_s
+              .DetailBody
+                .DetailBody__title
+                  - @items.each do |it|
+                    = it.name
+                    = it.price
+                %p.TaxIncluded
+                  (税込)
             .Product__list
               = link_to '#' do
                 %figure

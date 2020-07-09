@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.select("name", "price").first(4)
   end
   def show
-    @item = Item.find(params[:id])
+    @items = Item.find(params[:id])
   end
 
 end
