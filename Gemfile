@@ -84,3 +84,10 @@ gem 'mini_magick'
 
 # pry
 gem 'pry-rails'
+
+# jQuery
+gem 'jquery-rails'
+
+# Font Awesome
+gem "font-awesome-sass"
+
