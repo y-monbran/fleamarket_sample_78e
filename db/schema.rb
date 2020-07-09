@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_093451) do
     t.index ["user_id"], name: "index_adresses_on_user_id"
   end
 
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -49,13 +50,9 @@ ActiveRecord::Schema.define(version: 2020_07_09_093451) do
     t.integer "item_condition_id", null: false
     t.integer "prefecture_code_id", null: false
     t.integer "preparation_day_id", null: false
-    t.bigint "category_id", null: false
-    t.bigint "seller_id", null: false
-    t.bigint "buyer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["buyer_id"], name: "index_items_on_buyer_id"
-    t.index ["seller_id"], name: "index_items_on_seller_id"
+    t.bigint "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

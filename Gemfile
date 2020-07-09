@@ -76,8 +76,18 @@ gem 'ancestry'
 # active_hash
 gem 'active_hash'
 
+# carrierwave
+gem 'carrierwave'
+
+# mini_magick
+gem 'mini_magick'
+
+# pry
+gem 'pry-rails'
+
 # jQuery
 gem 'jquery-rails'
 
 # Font Awesome
 gem "font-awesome-sass"
+
