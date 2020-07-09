@@ -4,7 +4,7 @@
       .Sell__page__header__logo
         = image_tag "logo.png"        
     
-    = form_with class: "Sell__page__body", local: true do |f|
+    = form_with model: @item, class: "Sell__page__body", local: true do |f|
       .Sell__page__body__img
         .Sell__page__body__img__label
           出品画像 
@@ -12,7 +12,8 @@
             必須
         .Sell__page__body__img__comment
           最大10枚までアップロードできます。
-        = f.file_field :image, class: "Sell__page__body__img__form"  
+        = f.fields_for :item_imgs do |image|
+          = image.file_field :url, class: "Sell__page__body__img__form"
       .Sell__page__body__info
         .Sell__page__body__info__name
           商品名 
@@ -21,30 +22,30 @@
         .Sell__page__body__info__explain
           商品の説明
           %span 必須
-        = f.text_area :explain, class: "Sell__page__body__info__explain__form", placeholder: "商品の説明（必須1,000文字以内   （色、素材、重さ、定価、注意点など）例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+        = f.text_area :introduction, class: "Sell__page__body__info__explain__form", placeholder: "商品の説明（必須1,000文字以内   （色、素材、重さ、定価、注意点など）例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
         .Sell__page__body__details
           商品の詳細
           .Sell__page__body__details__category
             カテゴリー
-          = f.text_field :category, class: "form", placeholder: "選択してください"
+          -# = f.select :category_id, class: "form", placeholder: "選択してください"
           .Sell__page__body__details__bland
-            ブランド
-          = f.text_field :bland, class: "form", placeholder:"例）シャネル"
+          -#   ブランド
+          -# = f.text_field :bland, class: "form", placeholder:"例）シャネル"
           .Sell__page__body__details__status
             商品の状態
-          = f.text_field :status, class: "form", placeholder:"選択してください"
+          = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, {}, {class: "form", placeholder:"選択してください"}
         .Sell__page__body__delivary
           .Sell__page__body__delivary__top
             配送について
           .Sell__page__body__delivary__burden
             配送料の負担
-          = f.text_field :burden, class: "form", placeholder:"選択してください"
+          = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, {}, {class: "form", placeholder:"選択してください"}
           .Sell__page__body__delivary__area
             発送元の地域
-          = f.text_field :label, class: "form", placeholder:"選択してください"
+          = f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name, {}, {class: "form", placeholder:"選択してください"}
           .Sell__page__body__delivary__days
             発送までの日数
-          = f.text_field :label, class: "form", placeholder:"選択してください"
+          = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {}, {class: "form", placeholder:"選択してください"}
         .Sell__page__body__prices
           .Sell__page__body__prices__1
             価格(¥300~9,999,999)
@@ -58,12 +59,12 @@
                 販売利益
           .Sell__page__body__prices__yen
             ¥
-            = f.text_field :text, class: "Sell__page__body__prices__yen__form", placeholder: "                                 0"
+            = f.number_field :price, class: "Sell__page__body__prices__yen__form", placeholder: "                                 0"
         .Sell__page__body__last
           .Sell__page__body__last__send
-            = submit_tag "出品する", id: "button"
-          .Sell__page__body__last__draft
-            = submit_tag "下書きに保存", id: "button"
+            = f.submit "出品する", id: "button"
+          -# .Sell__page__body__last__draft
+          -#   = submit_tag "下書きに保存", id: "button"
           .Sell__page__body__last__return
             = link_to  "もどる", "#"
           .Sell__page__body__last__note
