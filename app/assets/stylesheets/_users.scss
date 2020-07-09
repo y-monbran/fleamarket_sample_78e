@@ -192,7 +192,7 @@ $main_color: #3CCACE;
         }
       }
       &__identification {
-        margin-top: 20px;
+        margin-top: 45px;
         &__title {
           font-size: 17px;
           font-weight: bold;
@@ -249,5 +249,20 @@ $main_color: #3CCACE;
   &__copyright {
     text-align: center;
     font-size: 13px;
+  }
+}
+.Form__field__error {
+  margin-top: 5px;
+  color: red;
+}
+.toggle{ 
+  position: relative;
+  .checkbox-field {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    .checkbox {
+      display: none;
+    }
   }
 }
