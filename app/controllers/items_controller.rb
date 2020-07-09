@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_categories, only: [edit new]
+  # before_action :set_categories, only: [edit new]
 
   def index
     @items = Item.select("name", "price").first(4)
