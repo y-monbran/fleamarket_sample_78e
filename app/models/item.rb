@@ -1,4 +1,8 @@
 class Item < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :comments, dependent: :destroy
   has_many :favorites
   has_many :item_imgs, dependent: :destroy
@@ -26,3 +30,5 @@ class Item < ApplicationRecord
     # validates :seller
   end
 end
+
+item = Item.new(name: "takashi", introduction: "aaaaaaaa", price:10000, postage_payer_id: 1, item_condition_id: 1, prefecture_code_id: 1, preparation_day_id: 1, category_id: 1, seller_id: 1, buyer_id: 1, created_at: nil, updated_at: nil, email: "aa@aa")
