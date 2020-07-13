@@ -324,6 +324,11 @@ $pickup_width: 880px;
       margin: 26px 0;
       &__list {
         width: calc(100% / 4);
+        .IndexBody{
+          .TaxIncluded {
+          font-size: 5px;
+          }
+        }
         a {
           display: block;
           text-decoration: none;
@@ -357,9 +362,6 @@ $pickup_width: 880px;
             ul {
               display: flex;
               justify-content: space-between;
-            }
-            .TaxIncluded {
-              font-size: 10px;
             }
           }
         }

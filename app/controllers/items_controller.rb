@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   # before_action :set_categories, only: [edit new]
 
   def index
-    @items = Item.select("name", "price").first(4)
+    @items = Item.all
     @items = Item.includes(:item_imgs).order('created_at DESC')
   end
 
@@ -29,6 +29,11 @@ class ItemsController < ApplicationController
   #   item.destroy
   # end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+end
   private
 
   def item_params
