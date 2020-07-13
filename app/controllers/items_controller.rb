@@ -25,15 +25,10 @@ class ItemsController < ApplicationController
     @items = Item.find(params[:id])
   end
   # def destroy
-  #   item = Item.find(params[:id])
+  #   # item = Item.find(params[:id])
   #   item.destroy
   # end
-
-  def destroy
-    item = Item.find(params[:id])
-    item.destroy
-  end
-end
+  
   private
 
   def item_params
@@ -44,6 +39,6 @@ end
     @parent_categories = Category.roots
     @default_child_categories = @parent_categories.first.children
     @default_grandchild_categories = @default_child_categories.first.children
-   end
+  end
 
 end

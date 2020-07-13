@@ -30,5 +30,3 @@ class Item < ApplicationRecord
     # validates :seller
   end
 end
-
-item = Item.new(name: "takashi", introduction: "aaaaaaaa", price:10000, postage_payer_id: 1, item_condition_id: 1, prefecture_code_id: 1, preparation_day_id: 1, category_id: 1, seller_id: 1, buyer_id: 1, created_at: nil, updated_at: nil, email: "aa@aa")
