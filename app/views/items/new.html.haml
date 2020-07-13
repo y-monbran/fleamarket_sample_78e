@@ -8,7 +8,7 @@
       .Sell__page__body__img
         .Sell__page__body__img__label
           出品画像 
-          %span
+          %span.require
             必須
         .Sell__page__body__img__comment
           最大10枚までアップロードできます。
@@ -17,11 +17,13 @@
       .Sell__page__body__info
         .Sell__page__body__info__name
           商品名 
-          %span 必須
+          %span.require
+            必須
         = f.text_field :name, class: "Sell__page__body__info__name__form", placeholder: "40文字まで"
         .Sell__page__body__info__explain
           商品の説明
-          %span 必須
+          %span.require
+            必須
         = f.text_area :introduction, class: "Sell__page__body__info__explain__form", placeholder: "商品の説明（必須1,000文字以内   （色、素材、重さ、定価、注意点など）例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
         .Sell__page__body__details
           商品の詳細
@@ -52,14 +54,16 @@
             .Sell__page__body__prices__1__sale
               .Sell__page__body__prices__1__sale__place
                 販売価格
-                %span 必須
+
+                %span.require
+                  必須
               .Sell__page__body__prices__1__fee
                 販売手数料(10%)
               .Sell__page__body__prices__1__fee__profit
                 販売利益
           .Sell__page__body__prices__yen
             ¥
-            = f.number_field :price, class: "Sell__page__body__prices__yen__form", placeholder: "                                 0"
+            = f.number_field :price, class: "Sell__page__body__prices__yen__form", placeholder: "                                0"
         .Sell__page__body__last
           .Sell__page__body__last__send
             = f.submit "出品する", id: "button"
