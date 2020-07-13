@@ -24,6 +24,10 @@ class ItemsController < ApplicationController
   def show
     @items = Item.find(params[:id])
   end
+  # def destroy
+  #   item = Item.find(params[:id])
+  #   item.destroy
+  # end
 
   private
 
