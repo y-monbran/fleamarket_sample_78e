@@ -75,32 +75,31 @@ $(function(){
 });
 
 $(document).on('turbolinks:load', ()=> {
-  // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="Sell__page__body__img__form">
                     <input class="Sell__page__body__img__form__body" type="file"
-                    name="product[images_attributes][${index}][src]"
-                    id="product_images_attributes_${index}_src"><br>
-                    <div class="js-remove">削除</div>
+                    name="product[images_attributes][${index}][url]"
+                    id="product_images_attributes_${index}_src">
+                    <span class="Sell__page__body__img__form__remove">削除</span>
                   </div>`;
     return html;
   }
 
-  // file_fieldのnameに動的なindexをつける為の配列
+  document.getElementById("#image-box")
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
+
   $('#image-box').on('change', '.Sell__page__body__img__form__body', function(e) {
-    console.log(this)
-    // fileIndexの先頭の数字を使ってinputを作る
-    $('#image-box').append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    if ($("#image-box").children().length<=2){
+      $('#image-box').append(buildFileField(fileIndex[0]));
+      fileIndex.shift();
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    }
   });
 
   $('#image-box').on('click', '.Sell__page__body__img__form__remove', function() {
     $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.Sell__page__body__img__form__bod').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    if ($('.Sell__page__body__img__form__body').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
+
