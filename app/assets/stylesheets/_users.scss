@@ -158,6 +158,15 @@ $main_color: #3CCACE;
             border: 4px;
             vertical-align: top;
           }
+          .any {
+            margin-left: 10px;
+            padding: 5px 8px;
+            color: #ffffff;
+            font-size: 12px;
+            background: #969191;
+            border: 4px;
+            vertical-align: top;
+          }
         }
         &__name {
           display: flex;
@@ -189,6 +198,16 @@ $main_color: #3CCACE;
           padding: 15px;
           border: 1px solid #ccc;
           border-radius: 4px;
+        }
+        &__prefecture {
+          width: 100%;
+          select {
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
         }
       }
       &__identification {
@@ -264,5 +283,75 @@ $main_color: #3CCACE;
     .checkbox {
       display: none;
     }
+  }
+}
+
+#create {
+  background: #f5f5f5;
+  height: 100vh;
+}
+.createHead {
+  width: 100%;
+  padding: 40px 0;
+  &__logo {
+    max-width: 456px;
+    margin: 0 auto;
+    text-align: center;
+    img {
+      width: 185px;
+    }
+  }
+}
+.createBox {
+  width: 100%;
+  padding: 100px 0;
+ .createBlock {
+   max-width: 456px;
+   margin: 0 auto;
+   text-align: center;
+   .head02 {
+     margin-bottom: 40px;
+     a {
+       padding: 20px 50px;
+       color: #fff;
+       background: $main_color;
+       border-radius: 4px;
+       &:hover {
+        @include hover;
+      }
+     }
+   }
+ }
+}
+.createFoot {
+  width: 100%;
+  margin-top: 100px;
+  padding: 40px 0;
+  &__area {
+    max-width: 456px;
+    margin: 0 auto;
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    li {
+      margin-left: 16px;
+      font-size: 12px;
+      color: #333;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__logo {
+    margin-top: 40px;
+    text-align: center;
+    img {
+      width: 185px;
+    }
+  }
+  &__copyright {
+    text-align: center;
+    font-size: 13px;
   }
 }
