@@ -11,6 +11,7 @@
 |family_name_kana|string|null: false|
 |birthday|date|null: false|
 
+
 ### Association
 - has_many: profiles, dependent: :destroy
 - has_many: comments, dependent: :destroy
