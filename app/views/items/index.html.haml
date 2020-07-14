@@ -67,6 +67,7 @@
           .AppBtn
             = link_to image_tag("app-store.svg", alt: "App Store"), "#", class: "AppBtn__apple"
             = link_to image_tag("google-play.svg", alt: "Google Play"), "#", class: "AppBtn__google"
+            -# %input{:type => "submit", :value => "削除"}/
   .MainFeature
     .Contents
       %section
@@ -134,17 +135,15 @@
                       ★0
                   %p.TaxIncluded
                     (税込)
-            -# .Product__list
-            -#   .ImgBody
-            -#     - @item_imgs.each do |i|
-            -#       = image_tag i.item.to_s
-            -#   .DetailBody
-            -#     .DetailBody__title
-            -#       - @items.each do |it|
-            -#         = it.name
-            -#         = it.price
-            -#     %p.TaxIncluded
-            -#       (税込)
+            .Product__list
+              -# %ul.indexBody
+              -# -# - @item_imgs.4.times do |it|
+              -#   %li.indexBody__list
+              -#   = it.item_imgs
+              -#   = it.name
+              -#   = it.price
+              -#     %p.TaxIncluded
+              -#     (税込)
             .Product__list
               = link_to '#' do
                 %figure

@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 2020_07_14_022107) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_items_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_items_on_reset_password_token", unique: true
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["email"], name: "index_items_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_items_on_reset_password_token", unique: true
+    t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
