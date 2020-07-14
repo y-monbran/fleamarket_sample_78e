@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', ()=> {
   function categoryOption(category){
     var optionHtml = `<option value="${category.id}">${category.name}</option>`;
     return optionHtml;
@@ -72,14 +72,12 @@ $(function(){
       });
     }
   });
-});
 
-$(document).on('turbolinks:load', ()=> {
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="Sell__page__body__img__form">
                     <input class="Sell__page__body__img__form__body" type="file"
-                    name="product[images_attributes][${index}][url]"
-                    id="product_images_attributes_${index}_src">
+                    name="item[item_imgs_attributes][${index}][url]"
+                    id="item_item_imgs_attributes_${index}_url">
                     <span class="Sell__page__body__img__form__remove">削除</span>
                   </div>`;
     return html;

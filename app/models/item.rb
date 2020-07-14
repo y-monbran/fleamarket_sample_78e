@@ -21,7 +21,7 @@ class Item < ApplicationRecord
     validates :postage_payer
     validates :prefecture_code
     validates :preparation_day
-    validates :item_imgs
+    # validates :item_imgs
     validates :category
     # validates :seller
   end
