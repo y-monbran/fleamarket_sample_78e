@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create]
   resources :categories, only: [:index]
   resources :item_imgs
+  
+  resources :items do
+    member do
+      get 'category_children'
+      get 'category_grandchildren'
+    end
+  end
 end
