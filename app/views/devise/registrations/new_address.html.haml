@@ -1,0 +1,80 @@
+#Sign
+  %header.SignUpHead
+    .SignUpHead__logo
+      = link_to image_tag("logo.png", alt: "FURIMA"), root_path
+  %main.SignUpBox
+    .SignUpBlock
+      %section
+        %h2.head02
+          ご本人様情報入力
+        .Form
+          -# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          -# = form_for(@address, resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = form_for(@address) do |f|
+            .Form__field
+              %p.Form__field__title
+                郵便番号
+                %span.required
+                  必須
+              .Form__field__post
+                = f.text_field :post_code, autofocus: true, autocomplete: "post_code", placeholder: "123-4567"
+              .Form__field__error
+                = @address.errors.full_messages_for(:post_code)[0]
+            .Form__field
+              %p.Form__field__title
+                都道府県
+                %span.required
+                  必須
+              .Form__field__prefecture
+                = f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name
+            .Form__field
+              %p.Form__field__title
+                市区町村
+                %span.required
+                  必須
+              .Form__field__city
+                = f.text_field :city, autofocus: true, autocomplete: "city", placeholder: "札幌市中央区"
+              .Form__field__error
+                = @address.errors.full_messages_for(:city)[0]
+            .Form__field
+              %p.Form__field__title
+                番地
+                %span.required
+                  必須
+              .Form__field__house
+                = f.text_field :house_number, autofocus: true, autocomplete: "house_number"
+              .Form__field__error
+                = @address.errors.full_messages_for(:house_number)[0]
+            .Form__field
+              %p.Form__field__title
+                ビル名・部屋番号
+                %span.any
+                  任意
+              .Form__field__building
+                = f.text_field :building_name, autofocus: true, autocomplete: "building_name"
+              -# .Form__field__error
+              -#   = @address.errors.full_messages_for(:building_name)[0]
+            .Form__field
+              %p.Form__field__title
+                電話番号
+                %span.any
+                  任意
+              .Form__field__phone
+                = f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "XXXーXXXXーXXXX"
+              -# .Form__field__error
+              -#   = @address.errors.full_messages_for(:phone_number)[0]
+            .Form__actions
+              = f.submit "登録する"
+  %footer.SignUpFoot
+    .SignUpFoot__area
+      %ul.SignUpFoot__text
+        %li
+          プライバシーポリシー
+        %li
+          FURIMA利用規約
+        %li
+          特定商取引に関する表記
+      .SignUpFoot__logo
+        = link_to image_tag("logo.png", alt: "FURIMA"), root_path
+      .SignUpFoot__copyright
+        &copy;FURIMA, Inc
