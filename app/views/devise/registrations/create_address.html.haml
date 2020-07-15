@@ -1,0 +1,24 @@
+#create
+  %header.createHead
+    .createHead__logo
+      = link_to image_tag("logo.png", alt: "FURIMA"), root_path
+  %main.createBox
+    .createBlock
+      %section
+        %h2.head02
+          = link_to "トップへ戻る", root_path
+        %p
+          ご登録ありがとうございました。
+  %footer.createFoot
+    .createFoot__area
+      %ul.createFoot__text
+        %li
+          プライバシーポリシー
+        %li
+          FURIMA利用規約
+        %li
+          特定商取引に関する表記
+      .createFoot__logo
+        = link_to image_tag("logo.png", alt: "FURIMA"), root_path
+      .createFoot__copyright
+        &copy;FURIMA, Inc
