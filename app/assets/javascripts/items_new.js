@@ -5,7 +5,6 @@ $(document).on('turbolinks:load', ()=> {
   }
   $('#category-select-parent').on('change', function(){
     let parentCategoryId = $(this).val();
-    console.log(parentCategoryId)
     if (parentCategoryId == ''){
       $('#select-children-box').remove();
       $('#select-grandchildren-box').remove();
@@ -41,7 +40,6 @@ $(document).on('turbolinks:load', ()=> {
   });
   $('.Sell__page__body__details').on('change', '#category-select-children', function(){
     let childrenCategoryId = $(this).val();
-    console.log(childrenCategoryId)
     if (childrenCategoryId == ''){
       $('#select-grandchildren-box').remove(); 
     }else{
@@ -100,4 +98,3 @@ $(document).on('turbolinks:load', ()=> {
     if ($('.Sell__page__body__img__form__body').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
-

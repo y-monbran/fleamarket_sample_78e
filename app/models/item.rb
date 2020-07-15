@@ -25,4 +25,7 @@ class Item < ApplicationRecord
     validates :category
     # validates :seller
   end
+
+  enum status_id: [['sale', 1], ['sold', 2]]
+
 end
