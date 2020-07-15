@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+.card_add {
+  // text-align: center;
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .details {
+    font-size: 16px;
+    text-align: center;
+    // display: flex;
+    // justify-content: center;
+    // font-weight: bold;
+    .number-details {
+      // margin: 0 auto;
+      // margin-bottom: 5px;
+      display: flex;
+      justify-content: center;
+      .card-number {
+        // font-size: 70px;
+        font-weight: bold;
+      }
+      .must_check  {
+        // display: inline;
+      }
+    }
+    .number {
+      // height: 30px;
+      .cardnumber {
+        height: 30px;
+        width: 300px;
+        padding: 2px;
+        margin-bottom: 5px;
+      }
+    }
+    .image {
+      // background-color: yellow;
+      .visa {
+        height: 30px;
+        width: 50px;
+      }
+      .master {
+        height: 30px;
+        width: 50px;
+      }
+      .jcb {
+        height: 30px;
+        width: 50px;
+      }
+      .amex {
+        height: 30px;
+        width: 50px;
+      }
+    }
+    .expirationdate {
+      &__details {
+        display: flex;
+        justify-content: center;
+        .date {
+          font-weight: bold;
+        }
+      }
+      &__choice {
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        // background-color: yellow;
+        margin-bottom: 5px;
+        .month {
+          display: flex;
+          #payment_card_month.card-default {
+            // margin-bottom: 5px;
+            width: 50px;
+            margin-right: 5px;
+          }
+          .month-details {
+            font-weight: bold;
+            margin-right: 5px;
+          }
+        }
+        .year {
+          display: flex;
+          #payment_card_year.card-default {
+            width: 50px;
+            margin-right: 5px;
+          }
+          .year-details {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .securitycode {
+      &__details {
+        display: flex;
+        justify-content: center;
+        &__title {
+          font-weight: bold;
+        }
+        .must_check {
+
+        }
+      }
+      &__cardsecurity {
+        // height: 30px;
+        // width: 100px;
+        // background-color: yellow;
+        &__form {
+          height: 30px;
+          width: 300px;
+          padding: 2px;
+        }
+      }
+      .card-question {
+
+      }
+    }
+    .add {
+      &__btn {
+        height: 50px;
+        width: 150px;
+        font-size: 24px;
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        border-style: none;
+        background-color: #3CCACE;
+      }
+    }
+  }
+}

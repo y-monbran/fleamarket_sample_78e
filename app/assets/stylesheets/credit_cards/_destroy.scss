@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.destoroy {
+  .destoroy__frame {
+    &__message {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+
+    }
+    &__btns {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      .credit_card_new_link {
+        height: 50px;
+        width: 150px;
+        font-size: 24px;
+        text-align: center;
+        border-radius: 20px;
+        color: #fff;
+        background-color: #3CCACE;
+      }
+      .my_page_link {
+
+      }
+    }
+  }
+}
