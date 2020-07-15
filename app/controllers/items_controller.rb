@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  # before_action :set_categories, only: [edit new]
+  before_action :set_category, only: [:new, :create]
 
   def index
     @items = Item.select("name", "price").first(4)
@@ -10,6 +10,15 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_imgs.new
+    @category_parent =  Category.where("ancestry is null")
+  end
+
+  def category_children
+    @category_children = Category.find("#{params[:parent_id]}").children
+  end
+
+  def category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   def create
@@ -28,13 +37,10 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :postage_payer_id, :item_condition_id, :prefecture_code_id, :preparation_day_id, item_imgs_attributes: [:url])
+    params.require(:item).permit(:name, :introduction, :price, :postage_payer_id, :item_condition_id, :prefecture_code_id, :preparation_day_id, :category_id, item_imgs_attributes: [:url])
   end
 
-  def set_categories
-    @parent_categories = Category.roots
-    @default_child_categories = @parent_categories.first.children
-    @default_grandchild_categories = @default_child_categories.first.children
-   end
-
+  def set_category
+    @category_parent = Category.all
+  end
 end

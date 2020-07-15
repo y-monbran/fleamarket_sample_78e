@@ -95,3 +95,5 @@ gem 'jquery-rails'
 # Font Awesome
 gem "font-awesome-sass"
 
+# jquery-turbolinks
+gem 'jquery-turbolinks'

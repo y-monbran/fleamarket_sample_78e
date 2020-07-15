@@ -54,7 +54,7 @@
 <!-- |postage_type|references|null: false, foreign_key: true| -->
 <!-- |item_img|references|null: false, foreign_key: true| -->
 |category|references|null: false, foreign_key: true|
-<!-- |trading_status|enum|null: false| -->
+|status|enum|null: false|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|foreign_key: true|
 
