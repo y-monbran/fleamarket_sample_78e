@@ -319,19 +319,21 @@ $pickup_width: 880px;
     }
     .Product {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-wrap: wrap;
       margin: 26px 0;
       &__list {
         width: calc(100% / 4);
-        a {
-          display: block;
-          text-decoration: none;
-          background: #ffffff;
-          &:hover {
-            @include hover;
+        .DetailBody{
+          padding: 16px;
+          color: #333333;
+          &__name{
+            margin: 10px 0;
           }
-          figure {
+          &__price{
+            display: flex;
+          }
+          &__img {
             position: relative;
             width: 220px;
             height: 150px;
@@ -350,23 +352,15 @@ $pickup_width: 880px;
               object-fit: cover;
             }
           }
-          .DetailBody {
-            padding: 16px;
-            color: #333333;
-            background: #ffffff;
-            ul {
-              display: flex;
-              justify-content: space-between;
-            }
-            .TaxIncluded {
-              font-size: 10px;
-            }
+          .TaxIncluded {
+            font-size: 10px;
           }
         }
       }
     }
   }
 }
+
 .SellBtn {
   position: fixed;
   bottom: 32px;
