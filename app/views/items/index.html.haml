@@ -102,9 +102,10 @@
       %section
         %h2
           ピックアップカテゴリー
-        %secion
+        %section
           %h3
             = link_to "新規投稿商品", "#"
+
           .Product
             .Product__list
               = link_to "#" do
@@ -213,14 +214,83 @@
               = link_to '#' do
                 %figure
                   = image_tag 'product4.png'
+            - @items.each do |it| 
+              .Product__list
                 .DetailBody
-                  .DetailBody__title
-                    product4
-                  %ul
-                    %li
-                      10000円
-                    %li
-                      ★0
-                  %p.TaxIncluded
-                    (税込)
+                  .DetailBody__img
+                    = image_tag it.item_imgs.first.url.url
+                  .DetailBody__name
+                    = it.name
+                  .DetailBody__price
+                    .DetailBody__price__yen
+                      ¥
+                    .DetailBody__price__value  
+                      = it.price
+                    %p.TaxIncluded
+                      (税込)
+         
+    -# .MainPickup__box
+    -#   %section
+    -#     %h2
+    -#       ピックアップブランド
+    -#     %secion
+    -#       %h3
+    -#         = link_to "アーカイバ", "#"
+    -#       .Product
+    -#         .Product__list
+    -#           = link_to '#' do
+    -#             %figure
+    -#               = image_tag 'product1.jpg'
+    -#             .DetailBody
+    -#               .DetailBody__title
+    -#                 product1
+    -#               %ul
+    -#                 %li
+    -#                   1000円
+    -#                 %li
+    -#                   ★0
+    -#               %p.TaxIncluded
+    -#                 (税込)
+    -#         .Product__list
+    -#           = link_to '#' do
+    -#             %figure
+    -#               = image_tag 'product2.png'
+    -#             .DetailBody
+    -#               .DetailBody__title
+    -#                 product2
+    -#               %ul
+    -#                 %li
+    -#                   3000円
+    -#                 %li
+    -#                   ★0
+    -#               %p.TaxIncluded
+    -#                 (税込)
+    -#         .Product__list
+    -#           = link_to '#' do
+    -#             %figure
+    -#               = image_tag 'product3.png'
+    -#             .DetailBody
+    -#               .DetailBody__title
+    -#                 product3
+    -#               %ul
+    -#                 %li
+    -#                   20000円
+    -#                 %li
+    -#                   ★0
+    -#               %p.TaxIncluded
+    -#                 (税込)
+    -#         .Product__list
+    -#           = link_to '#' do
+    -#             %figure
+    -#               = image_tag 'product4.png'
+    -#             .DetailBody
+    -#               .DetailBody__title
+    -#                 product4
+    -#               %ul
+    -#                 %li
+    -#                   10000円
+    -#                 %li
+    -#                   ★0
+    -#               %p.TaxIncluded
+    -#                 (税込)
 = render "./layouts/footer"
