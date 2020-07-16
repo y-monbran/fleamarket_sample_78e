@@ -24,24 +24,23 @@ img {
     text-align: center;
   }
   &__content {
+    margin: 10px 0;
     text-align: center;
     &--photo {
-      &--main {
-        object-fit: cover;
-        height: 346px;
-      }
+      object-fit: cover;
+      height: 346px;
     }
   }
   &__select {
     text-align: center;
     display: flex;
     justify-content: center;
-    &--image {
+    margin-bottom: 10px;
+    &--photo {
         margin-right: 10px;
-      &--one {
         object-fit: cover;
         height: 87px;
-      }
+        cursor: pointer;
     }
     &:last-child {
       margin-right: 0px;
@@ -96,7 +95,7 @@ img {
     border-radius: 1rem;
     display: block;
     width: 300px;
-    margin: 10px auto;
+    margin: 30px auto 10px;
   }
   &__action {
     display: flex;

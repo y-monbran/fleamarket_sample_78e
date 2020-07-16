@@ -108,7 +108,7 @@
 
           .Product
             - @items.each do |it| 
-              .Product__list
+              = link_to item_path(it.id), class:"Product__list" do
                 .DetailBody
                   .DetailBody__img
                     = image_tag it.item_imgs.first.url.url
@@ -117,7 +117,7 @@
                   .DetailBody__price
                     .DetailBody__price__yen
                       ¥
-                    .DetailBody__price__value  
+                    .DetailBody__price__value
                       = it.price
                     %p.TaxIncluded
                       (税込)
