@@ -319,11 +319,12 @@ $pickup_width: 880px;
     }
     .Product {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
       margin: 26px 0;
       &__list {
         width: calc(100% / 4);
+        text-decoration: none;
         .DetailBody{
           padding: 16px;
           color: #333333;

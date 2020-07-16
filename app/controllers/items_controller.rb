@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_category, only: [:new, :create]
+  before_action :set_item, only: [:show]
 
   def index
     @items = Item.select("name", "price").first(4)
@@ -31,7 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.find(params[:id])
   end
 
   # def buy
@@ -41,6 +41,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :postage_payer_id, :item_condition_id, :prefecture_code_id, :preparation_day_id, :category_id, item_imgs_attributes: [:url])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def set_category
