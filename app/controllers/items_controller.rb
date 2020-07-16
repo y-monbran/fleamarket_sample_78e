@@ -25,8 +25,8 @@ class ItemsController < ApplicationController
     @items = Item.find(params[:id])
   end
 
-  def buy
-  end
+  # def buy
+  # end
 
   private
 
