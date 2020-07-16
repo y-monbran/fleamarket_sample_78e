@@ -15,16 +15,19 @@
               商品画像
             .itemInfo
               %p.itemName
-                商品名
+                -# 商品名
+                = "#{@item.name}"
               %p.itemPrice
-                値段
+                -# 値段
+                = "#{@item.price}" + "円"
         .mainText__lists--3
           .textBox3
             .payment
               .paymentText
                 支払い金額
               .paymentAmount
-                金額
+                -# 金額
+                = "#{@item.price}" + "円"
             .usePoints
               ポイントの利用はありません
         .mainText__lists--4
@@ -33,14 +36,17 @@
               支払い方法
             .cardInfo
               = link_to "登録してください", "/credit_cards/new", method: :get
+              -# = link_to "登録してください", "/credit_cards/1", method: :delete
               -# :plain
-              -#   <script type="text/javascript"
-              -#   src="https://checkout.pay.jp/"
-              -#   class="payjp-button"
-              -#   data-key="公開鍵"
-              -#   data-submit-text="カードで支払う"
-              -#   data-partial="true">
-              -#   </script>
+                -# <script type="text/javascript"
+                -# src="https://checkout.pay.jp/"
+                -# src="payjp.js"
+                -# class="payjp-button"
+                
+                -# data-key="pk_test_f9c4bb64158e5b8e9834ca5c"
+                -# data-submit-text="カードで支払う"
+                -# data-partial="true">
+                </script>
         .mainText__lists--5
           .textBox5
             %h3.shippingText
@@ -54,7 +60,8 @@
             .headsUp
               配送先と支払い方法の入力を完了してください。
             .purchaseButton
-              = submit_tag "購入する", id: "button"
+              -# = submit_tag "購入する", id: "button"
+              = link_to "購入する", "/credit_cards/pay", method: :post, id: "button"
 
   .footer
     .footerText

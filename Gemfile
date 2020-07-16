@@ -95,5 +95,8 @@ gem 'jquery-rails'
 # Font Awesome
 gem "font-awesome-sass"
 
+# payjp
+gem 'payjp'
+
 # jquery-turbolinks
 gem 'jquery-turbolinks'
