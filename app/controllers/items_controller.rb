@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_category, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.select("name", "price").first(4)
@@ -32,6 +32,11 @@ class ItemsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   # def buy

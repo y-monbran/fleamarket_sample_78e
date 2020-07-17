@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  has_many :comments, dependent: :destroy
-  has_many :favorites
+  # has_many :comments, dependent: :destroy
+  # has_many :favorites
   has_many :item_imgs, dependent: :destroy
   belongs_to :category
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :prefecture_code
   belongs_to_active_hash :preparation_day
-  belongs_to :seller, class_name: "User", optional: true
+  belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
 
   accepts_nested_attributes_for :item_imgs, allow_destroy: true
@@ -23,7 +23,7 @@ class Item < ApplicationRecord
     validates :preparation_day
     validates :item_imgs
     validates :category
-    # validates :seller
+    validates :seller
   end
 
   enum status: {
