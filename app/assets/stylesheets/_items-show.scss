@@ -99,7 +99,8 @@ img {
   }
   &__action {
     display: flex;
-    &--favorite {
+    margin-top: 20px;
+    &--edit {
       color: $main_color;
       margin-right: auto;
       padding: 6px 10px;
