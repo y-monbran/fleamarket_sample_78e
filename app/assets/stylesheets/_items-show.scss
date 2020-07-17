@@ -99,14 +99,15 @@ img {
   }
   &__action {
     display: flex;
-    &--favorite {
+    margin-top: 20px;
+    &--edit {
       color: $main_color;
       margin-right: auto;
       padding: 6px 10px;
       border-radius: 40px;
       border: 1px solid #ffb340;
     }
-    &--report {
+    &--delete {
       padding: 6px 10px;
       border-radius: 4px;
       color: #333;

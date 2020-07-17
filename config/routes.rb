@@ -22,7 +22,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:index, :show, :new, :create]
   resources :categories, only: [:index]
   resources :item_imgs
   resources :users, only: [:show]
