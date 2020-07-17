@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index]
   resources :item_imgs
-  resources :users, only: [:index]
+  resources :users, only: [:show]
   resources :items do
     member do
       get 'category_children'

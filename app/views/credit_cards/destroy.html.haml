@@ -1,4 +1,7 @@
 .destoroy
+  %header.purchaseHead
+    .purchaseHead__logo
+      = link_to image_tag("logo.png", alt: "FURIMA"), root_path
   .destoroy__frame
     .destoroy__frame__message
       削除が完了しました。
@@ -6,5 +9,4 @@
       %li.credit_card_new_link
         = link_to "クレジットカード新規登録", new_credit_card_path, class: "credit_card_new_link__btn"
       %li.my_page_link
-        -# = link_to "マイページに戻る", users_path(current_user.id), class: "my_page_link__btn"
-        = link_to "マイページに戻る", users_path(1), class: "my_page_link__btn"
+        = link_to "マイページに戻る", user_path(current_user.id), class: "my_page_link__btn"

@@ -21,7 +21,7 @@
           %li.Register__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li.Register__mypage
-            = link_to "マイページ", users_path
+            = link_to "マイページ", user_path(current_user.id)
         - else
           %li.Register__login
             = link_to "ログイン", new_user_session_path

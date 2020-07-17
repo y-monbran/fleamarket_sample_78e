@@ -12,7 +12,7 @@
         .mainText__lists--2
           .textBox2
             .itemImage
-              商品画像
+              = image_tag @item.item_imgs[0].url.url
             .itemInfo
               %p.itemName
                 -# 商品名
@@ -47,12 +47,12 @@
                 -# data-submit-text="カードで支払う"
                 -# data-partial="true">
                 </script>
-        .mainText__lists--5
-          .textBox5
-            %h3.shippingText
-              配送先
-            .addressInfo
-              = link_to "登録してください", "#"
+        -# .mainText__lists--5
+        -#   .textBox5
+        -#     %h3.shippingText
+        -#       配送先
+        -#     .addressInfo
+        -#       = link_to "登録してください", "#"
         .mainText__lists--6
           .textBox6
             .precautions

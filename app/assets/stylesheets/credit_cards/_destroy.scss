@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .destoroy {
   .destoroy__frame {
     &__message {
@@ -11,20 +7,26 @@
 
     }
     &__btns {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
       .credit_card_new_link {
-        height: 50px;
-        width: 150px;
-        font-size: 24px;
+        width: 250px;
+        margin: 50px auto 30px;
+        font-size: 18px;
         text-align: center;
         border-radius: 20px;
         color: #fff;
         background-color: #3CCACE;
+        a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          color: #fff;
+        }
       }
       .my_page_link {
-
+        text-align: center;
+        a {
+          text-decoration: none;
+        }
       }
     }
   }

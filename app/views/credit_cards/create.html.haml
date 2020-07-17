@@ -1,13 +1,12 @@
 .create
+  %header.purchaseHead
+    .purchaseHead__logo
+      = link_to image_tag("logo.png", alt: "FURIMA"), root_path
   .create__frame
     .create__frame__message
       登録が完了しました。
     %ul.create__frame__btns
-      -# マイページに戻るパスを指定
       %li.my_page_link
-        -# = link_to "マイページに戻る", users_path(current_user.id), class: "my_page_link__btn"
-        = link_to "マイページに戻る", users_path(1), class: "my_page_link__btn"
-      -# のちに実装する、登録クレジットカード詳細表示(showアクション)に行くパスを指定
+        = link_to "マイページに戻る", user_path(current_user.id), class: "my_page_link__btn"
       %li.credit_cards_index_link
-        -# = link_to "登録カード一覧", credit_card_path(current_user.id), class: "credit_cards_index_link__btn"
-        -# = link_to "登録カード一覧", credit_card_path(1), class: "credit_cards_index_link__btn"
+        = link_to "登録カード一覧", credit_card_path(current_user.id), class: "credit_cards_index_link__btn"
