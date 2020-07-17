@@ -1,9 +1,17 @@
-* {
-  box-sizing: border-box;
+.purchaseHead {
+  width: 100%;
+  padding: 40px 0;
+  &__logo {
+    max-width: 456px;
+    margin: 0 auto;
+    text-align: center;
+    img {
+      width: 185px;
+    }
+  }
 }
 
 .card_add {
-  // text-align: center;
   .title {
     font-size: 32px;
     font-weight: bold;
@@ -13,33 +21,32 @@
   .details {
     font-size: 16px;
     text-align: center;
-    // display: flex;
-    // justify-content: center;
-    // font-weight: bold;
     .number-details {
-      // margin: 0 auto;
-      // margin-bottom: 5px;
       display: flex;
       justify-content: center;
+      margin: 20px 0;
       .card-number {
-        // font-size: 70px;
         font-weight: bold;
       }
-      .must_check  {
-        // display: inline;
+      .must_check {
+        margin-left: 10px;
+        padding: 5px 8px;
+        color: #ffffff;
+        font-size: 12px;
+        background: #ea352d;
+        border: 4px;
+        vertical-align: top;
       }
     }
     .number {
-      // height: 30px;
+      margin-bottom: 20px;
       .cardnumber {
-        height: 30px;
         width: 300px;
-        padding: 2px;
+        padding: 15px;
         margin-bottom: 5px;
       }
     }
     .image {
-      // background-color: yellow;
       .visa {
         height: 30px;
         width: 50px;
@@ -58,24 +65,33 @@
       }
     }
     .expirationdate {
+      margin-top: 30px;
       &__details {
         display: flex;
         justify-content: center;
         .date {
           font-weight: bold;
         }
+        .must_check {
+          margin-left: 10px;
+          padding: 5px 8px;
+          color: #ffffff;
+          font-size: 12px;
+          background: #ea352d;
+          border: 4px;
+          vertical-align: top;
+        }
       }
       &__choice {
-        height: 30px;
+        margin-top: 15px;
         display: flex;
         justify-content: center;
-        // background-color: yellow;
         margin-bottom: 5px;
         .month {
           display: flex;
+          align-items: center;
           #payment_card_month.card-default {
-            // margin-bottom: 5px;
-            width: 50px;
+            padding: 10px 20px;
             margin-right: 5px;
           }
           .month-details {
@@ -85,8 +101,9 @@
         }
         .year {
           display: flex;
+          align-items: center;
           #payment_card_year.card-default {
-            width: 50px;
+            padding: 10px 20px;
             margin-right: 5px;
           }
           .year-details {
@@ -96,6 +113,7 @@
       }
     }
     .securitycode {
+      margin-top: 30px;
       &__details {
         display: flex;
         justify-content: center;
@@ -103,33 +121,66 @@
           font-weight: bold;
         }
         .must_check {
-
+          margin-left: 10px;
+          padding: 5px 8px;
+          color: #ffffff;
+          font-size: 12px;
+          background: #ea352d;
+          border: 4px;
+          vertical-align: top;
         }
       }
       &__cardsecurity {
-        // height: 30px;
-        // width: 100px;
-        // background-color: yellow;
+        margin-top: 15px;
         &__form {
-          height: 30px;
           width: 300px;
-          padding: 2px;
+          padding: 15px;
         }
-      }
-      .card-question {
-
       }
     }
     .add {
       &__btn {
-        height: 50px;
-        width: 150px;
-        font-size: 24px;
+        width: 300px;
+        margin-top: 50px;
+        padding: 10px;
+        font-size: 18px;
         text-align: center;
         border-radius: 5px;
         color: #fff;
         border-style: none;
         background-color: #3CCACE;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.pay {
+  .main_contents {
+    width: 100%;
+    .main_details {
+      max-width: 750px;
+      margin: 0 auto;
+      &__message {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+    .purchased__links {
+      text-align: center;
+      a {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 5px;
+        color: #fff;
+        border-style: none;
+        background-color: #3CCACE;
+        text-decoration: none;
+        cursor: pointer;
       }
     }
   }

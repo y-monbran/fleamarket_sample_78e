@@ -56,6 +56,9 @@
             justify-content: space-between;
             .itemImage {
               width: 80px;
+              img {
+                width: 80px;
+              }
             }
             .itemInfo {
               width: 247px;
@@ -151,14 +154,14 @@
               text-align: center;
             }
             .purchaseButton {
-              height: 50px;
               #button {
-                height: 50px;
-                width: 343px;
+                margin: 0 auto;
+                padding: 15px 20px;
                 border: none;
                 border-radius: 5px;
                 color: #fff;
                 background-color: #3CCACE;
+                text-decoration: none;
               }
             }
           }
