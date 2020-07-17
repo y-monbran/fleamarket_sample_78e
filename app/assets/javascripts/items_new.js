@@ -84,6 +84,10 @@ $(document).on('turbolinks:load', ()=> {
   document.getElementById("#image-box")
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
+  lastIndex = $('.Sell__page__body__img__form:last').data('index');
+  fileIndex.splice(0, lastIndex);
+  
+  $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.Sell__page__body__img__form__body', function(e) {
     if ($("#image-box").children().length<=2){
@@ -94,6 +98,9 @@ $(document).on('turbolinks:load', ()=> {
   });
 
   $('#image-box').on('click', '.Sell__page__body__img__form__remove', function() {
+    const targetIndex = $(this).parent().data('index')
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().remove();
     if ($('.Sell__page__body__img__form__body').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
