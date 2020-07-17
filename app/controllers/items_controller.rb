@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_category, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.select("name", "price").first(4)
@@ -34,13 +34,18 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def destroy
+    @item.destroy
+    redirect_to root_path
+  end
+
   # def buy
   # end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :postage_payer_id, :item_condition_id, :prefecture_code_id, :preparation_day_id, :category_id, item_imgs_attributes: [:url])
+    params.require(:item).permit(:name, :introduction, :price, :postage_payer_id, :item_condition_id, :prefecture_code_id, :preparation_day_id, :category_id, item_imgs_attributes: [:url]).merge(seller_id: current_user.id)
   end
 
   def set_item
