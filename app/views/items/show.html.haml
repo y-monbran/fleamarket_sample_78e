@@ -11,6 +11,7 @@
         = image_tag img.url.url, class: "Item__select--photo", alt: "画像"
     .Item__price
       %span.Item__price--body
+        ¥
         = @item.price
       .Item__price--taxes
       %span.Item__price--taxes--tax
@@ -25,7 +26,7 @@
         %th.Item__table--th
           出品者
         %td.Item__table--td
-          ゆゆちむ
+          = @item.seller.nickname
       %tr
         %th.Item__table--th
           カテゴリー
