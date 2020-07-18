@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent =  Category.where("ancestry is null")
   end
 
   def update
@@ -49,9 +50,6 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to root_path
   end
-
-  # def buy
-  # end
 
   private
 

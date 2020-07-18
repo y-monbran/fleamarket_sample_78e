@@ -81,20 +81,31 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+  const buildImg = (index, url)=> {
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    return html;
+  }
+
   document.getElementById("#image-box")
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   lastIndex = $('.Sell__page__body__img__form:last').data('index');
   fileIndex.splice(0, lastIndex);
-  
+
   $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.Sell__page__body__img__form__body', function(e) {
-    if ($("#image-box").children().length<=2){
-      $('#image-box').append(buildFileField(fileIndex[0]));
-      fileIndex.shift();
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-    }
+      const targetIndex = $(this).parent().data('index');
+      const file = e.target.files[0];
+      const blobUrl = window.URL.createObjectURL(file);
+      if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+        img.setAttribute('url', blobUrl);
+      } else {
+        $('#previews').append(buildImg(targetIndex, blobUrl));
+        $('#image-box').append(buildFileField(fileIndex[0]));
+        fileIndex.shift();
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+      }
   });
 
   $('#image-box').on('click', '.Sell__page__body__img__form__remove', function() {
@@ -102,6 +113,8 @@ $(document).on('turbolinks:load', ()=> {
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
+
     if ($('.Sell__page__body__img__form__body').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
