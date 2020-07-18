@@ -18,10 +18,8 @@
                   .sold__inner SOLD
             .itemInfo
               %p.itemName
-                -# 商品名
                 = "#{@item.name}"
               %p.itemPrice
-                -# 値段
                 = "#{@item.price}" + "円"
         .mainText__lists--3
           .textBox3
@@ -29,7 +27,6 @@
               .paymentText
                 支払い金額
               .paymentAmount
-                -# 金額
                 = "#{@item.price}" + "円"
             .usePoints
               ポイントの利用はありません
@@ -38,7 +35,6 @@
             %h3.paymentMethod
               支払い方法
             .credit_card_info
-              -# -binding.pry
               -if @add_cards == nil
                 = link_to "登録してください", new_credit_card_path, method: :get
               -else
@@ -59,10 +55,6 @@
             .headsUp
               配送先と支払い方法の入力を完了してください。
             .purchaseButton
-              -# = link_to "購入する", pay_credit_card_path(@item), method: :post, id: "button"
-              -# = link_to "購入する", pay_credit_card_path(@item.id), method: :post, id: "button"
-              -# = submit_tag "購入する", "/credit_cards/pay", id: "button"
-              -# .product-buy__btn__box       
               -if @item.status == "sold" 
                 %p.soldBtn 売り切れました
               - else
@@ -78,6 +70,6 @@
         %li
           特定商取引に関する表記
     .footerLogo
-      -# = link_to image_tag("logo/logo.png", class: "logo"), action: "index"
+      = link_to image_tag("logo/logo.png", class: "logo"), action: "index"
     .footerCompany
       ©︎FURIMA, Inc
