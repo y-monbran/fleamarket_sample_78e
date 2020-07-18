@@ -31,4 +31,13 @@ class Item < ApplicationRecord
     sold: 2
   }
 
+  validate :item_imgs_number
+
+  private
+
+  def item_imgs_number
+    errors.add(:item_imgs, "を1つ以上指定して下さい") if item_imgs.size < 1
+    errors.add(:item_imgs, "は3個までです") if item_imgs.size > 3
+  end
+
 end
