@@ -23,6 +23,7 @@ class Item < ApplicationRecord
     validates :preparation_day
     validates :item_imgs
     validates :category
+    validates :status
     # validates :seller
   end
 

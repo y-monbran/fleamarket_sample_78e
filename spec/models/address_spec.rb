@@ -3,12 +3,12 @@ require 'spec_helper'
 
 describe Address do
   context 'ウィザード形式2ページ目（必須事項は埋まっていない時にエラー表示をするか）'do
-    it "必須項目が間違いなく入力されていれば進める"do
+    it "必須項目が間違いなく入力されていれば進める" do
       address = build(:address) 
       expect(address).to be_valid
     end
 
-    it "郵便番号がないと進めない"do
+    it "郵便番号がないと進めない" do
     address = build(:address, post_code: nil)
     address.valid?
       expect(address.errors[:post_code]).to include("を入力してください")
