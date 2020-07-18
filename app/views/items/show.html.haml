@@ -4,8 +4,11 @@
   .Item
     %h1.Item__name
       = @item.name
-    .Item__content
+    .Item__content.showImage
       = image_tag @item.item_imgs.first.url.url, class: "Item__content--photo", alt: "画像"
+      -if @item.status == "sold"
+        .sold
+          .sold__inner SOLD
     .Item__select
       - @item.item_imgs.each do |img|
         = image_tag img.url.url, class: "Item__select--photo", alt: "画像"
@@ -61,9 +64,15 @@
         %td.Item__table--td
           = @item.preparation_day.name
     
-    - if user_signed_in? && current_user.id != @item.seller_id
-      = link_to "#", class:"Item__buy" do
+    - if user_signed_in? && current_user.id != @item.seller_id && @item.status != "sold"
+      = link_to buy_credit_card_path, class:"Item__buy" do
         購入画面に進む
+    - elsif user_signed_in? && current_user.id == @item.seller_id && @item.status != "sold"
+    - elsif user_signed_in? == false
+      %p.loginBtn
+        = link_to "ログインして下さい", new_user_session_path
+    - else
+      %p.soldBtn 売り切れました
     - if user_signed_in? && current_user.id == @item.seller_id
       .Item__action
         = link_to edit_item_path(@item), class: "Item__action--edit" do

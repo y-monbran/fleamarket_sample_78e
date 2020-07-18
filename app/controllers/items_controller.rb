@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    @items = Item.select("name", "price").first(4)
-    @items = Item.includes(:item_imgs).order('created_at DESC')
+    # @items = Item.select("name", "price").first(4)
+    @items = Item.includes(:item_imgs).limit(4).order('created_at DESC')
   end
 
   def new

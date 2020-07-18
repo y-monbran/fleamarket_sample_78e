@@ -110,8 +110,11 @@
             - @items.each do |it| 
               = link_to item_path(it.id), class:"Product__list" do
                 .DetailBody
-                  .DetailBody__img
-                    -# = image_tag it.item_imgs.first.url.url
+                  .DetailBody__img.itemImage
+                    = image_tag it.item_imgs.first.url.url
+                    -if it.status == "sold"
+                      .sold
+                        .sold__inner SOLD
                   .DetailBody__name
                     = it.name
                   .DetailBody__price

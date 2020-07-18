@@ -1,39 +1,3 @@
-.buy
-  .main_contents
-    .main_details
-      -# 商品情報を部分テンプレートで共通化してます。今回は実装内容と逸れるので省略
-      -# = render "purchases/shared/purchase_product_info.html.haml", product: @product, images: @images
-    .purchase_registration
-      .purchase_registration_main
-        .payment
-          支払い金額   
-        .amount
-          = "#{@item.price}" + "円"
-      -# クレジットカードを登録済みの場合の表示
-      - if @user.credit_card.present?
-        .purchase_function
-          .credit_card_info_title
-            クレジットカード情報
-            -# クレジットカード情報を表示させます。
-            .credit_card_info
-              .credit_card_info__brand
-                = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
-              .credit_card_info__numbers
-                .number
-                  = "**** **** **** " + @customer_card.last4
-                .expiration_date
-                  .expiration_date__title
-                    有効期限
-                  .expiration_date__info
-                    = @exp_month + " / " + @exp_year
-          .purchase_function__btn
-            = link_to "登録クレジットカードで購入する", pay_product_purchases_path(item_id: @product.id), method: :post, class: "btn"
-      - else 
-        .purchase_none_btn
-          -# Checkoutのフォームを開くための記述
-          = form_tag(action: :pay, method: :post) do
-            %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,data-text: "購入する" ,data-key: "pk_test_f9c4bb64158e5b8e9834ca5c"}
-
 .wrapper
   .header
     .headerLogo
@@ -48,18 +12,24 @@
         .mainText__lists--2
           .textBox2
             .itemImage
-              商品画像
+              = image_tag @item.item_imgs.first.url.url
+              -if @item.status == "sold" 
+                .sold
+                  .sold__inner SOLD
             .itemInfo
               %p.itemName
-                商品名
+                -# 商品名
+                = "#{@item.name}"
               %p.itemPrice
-                値段
+                -# 値段
+                = "#{@item.price}" + "円"
         .mainText__lists--3
           .textBox3
             .payment
               .paymentText
                 支払い金額
               .paymentAmount
+                -# 金額
                 = "#{@item.price}" + "円"
             .usePoints
               ポイントの利用はありません
@@ -67,25 +37,21 @@
           .textBox4
             %h3.paymentMethod
               支払い方法
-            .cardInfo
-              = link_to "登録してください", "/credit_cards/new", method: :get
-              -# = link_to "登録してください", "/credit_cards/1", method: :delete
-              -# :plain
-                -# <script type="text/javascript"
-                -# src="https://checkout.pay.jp/"
-                -# src="payjp.js"
-                -# class="payjp-button"
-                
-                -# data-key="pk_test_f9c4bb64158e5b8e9834ca5c"
-                -# data-submit-text="カードで支払う"
-                -# data-partial="true">
-                </script>
-        .mainText__lists--5
-          .textBox5
-            %h3.shippingText
-              配送先
-            .addressInfo
-              = link_to "登録してください", "#"
+            .credit_card_info
+              -# -binding.pry
+              -if @add_cards == nil
+                = link_to "登録してください", new_credit_card_path, method: :get
+              -else
+                .credit_card_info__brand
+                  = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
+                .credit_card_info__numbers
+                  .number
+                    = "**** **** **** " + @customer_card.last4
+                  .expiration_date
+                    .expiration_date__title
+                      有効期限
+                    .expiration_date__info
+                      = @exp_month + " / " + @exp_year
         .mainText__lists--6
           .textBox6
             .precautions
@@ -93,8 +59,15 @@
             .headsUp
               配送先と支払い方法の入力を完了してください。
             .purchaseButton
-              = submit_tag "購入する", id: "button"
-
+              -# = link_to "購入する", pay_credit_card_path(@item), method: :post, id: "button"
+              -# = link_to "購入する", pay_credit_card_path(@item.id), method: :post, id: "button"
+              -# = submit_tag "購入する", "/credit_cards/pay", id: "button"
+              -# .product-buy__btn__box       
+              -if @item.status == "sold" 
+                %p.soldBtn 売り切れました
+              - else
+                = link_to "購入する", pay_credit_card_path(@item), method: :post, id: "button"
+          
   .footer
     .footerText
       %ul.footerText__lists

@@ -7,15 +7,11 @@ class CreditCardsController < ApplicationController
   end
 
   def create
-    # 前回credentials.yml.encに記載したAPI秘密鍵を呼び出します。
     # Payjp.api_key = Rails.application.credentials.dig(:PAYJP_PRIVATE_KEY)
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
-    # 後ほどトークン作成処理を行いますが、そちらの完了の有無でフラッシュメッセージを表示させます。
     if params["payjp_token"].blank? # blank? nilまたは空のオブジェクトを判定できる。
-      redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
+      redirect_to new_credit_card_path, alert: "クレジットカードを登録できませんでした。"
     else
-    # 無事トークン作成された場合のアクション(こっちが本命のアクション)
-    # まずは生成したトークンから、顧客情報と紐付け、PAY.JP管理サイトに登録
       customer = Payjp::Customer.create(
         email: current_user.email,
         card: params["payjp_token"]
@@ -23,7 +19,6 @@ class CreditCardsController < ApplicationController
       )
       # 今度はトークン化した情報を自アプリのCredit_cardsテーブルに登録！
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      # @card = CreditCard.new(user_id: 1, customer_id: customer.id, card_id: customer.default_card)
       # 無事、トークン作成とともにcredit_cardsテーブルに登録された場合、createビューが表示されるように条件分岐
       if @card.save
         #もしcreateビューを作成しない場合はredirect_toなどで表示ビューを指定
@@ -100,16 +95,14 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  def index
+  def buy
     # 購入する商品を引っ張ってきます。
-    @item = Item.find_by(params[:item_id])
-    @imgs = ItemImg.find_by(params[:id])
-
-    # @item = Item.find(1)
+    @item = Item.find(params[:id])
+    @imgs = ItemImg.find(params[:id])
     # 商品ごとに複数枚写真を登録できるので、一応全部持ってきておきます。
     @item_imgs = @imgs.url
-
     # まずはログインしているか確認
+    @add_cards = CreditCard.find_by(user_id: current_user.id)
     if user_signed_in?
      @user = current_user
       # クレジットカードが登録されているか確認
@@ -155,43 +148,42 @@ class CreditCardsController < ApplicationController
     end
   end
 
+  def purchase_complite
+  end
+
+
   def pay
-    # @item = Item.find(params[:item_id])
-    # @images = @item.images.all
-    @item = Item.find_by(params[:item_id])
-    @imgs = ItemImg.find_by(params[:id])
+    @item = Item.find(params[:id])
+    @imgs = ItemImg.find(params[:id])
     @item_imgs = @imgs.url
-    # 購入テーブル登録ずみ商品は２重で購入されないようにする
-    # (２重で決済されることを防ぐ)
-    # if @item.purchase.present?
     @user = current_user
     if @user.credit_card.blank?
-      redirect_to action: "new"
-      flash[:alert] = '購入にはクレジットカード登録が必要です'
+      # redirect_to action: "new"
+      # flash[:alert] = '購入にはクレジットカード登録が必要です'
+      redirect_to new_credit_card_path, alert: "購入にはクレジットカード登録が必要です"
     else
-      @item = Item.find_by(params[:item_id])
-     # 購入した際の情報を元に引っ張ってくる
+      @item = Item.find(params[:id])
       card = current_user.credit_card
-     # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
-      # Payjp.api_key = "sk_test_0e2eb234eabf724bfaa4e676"
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
-     # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
-      amount: @item.price, #支払金額
-      customer: card.customer_id, #顧客ID
-      currency: 'jpy', #日本円
+      amount: @item.price,
+      customer: card.customer_id,
+      currency: 'jpy',
       )
-     # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
-      # if @item.update(status: 1, buyer_id: current_user.id)
-      #   flash[:notice] = '購入しました。'
-      #   redirect_to controller: "products", action: 'show'
-      # else
-      #   flash[:alert] = '購入に失敗しました。'
-      #   redirect_to controller: "products", action: 'show'
-      # end
-     #↑この辺はこちら側のテーブル設計どうりに色々しています
+      if @item.update(status: "sold", buyer_id: current_user.id)
+        # flash[:notice] = '購入しました。'
+        # redirect_to purchase_complite_credit_cards_path
+        redirect_to purchase_complite_credit_cards_path, notice: "購入しました。"
+      else
+        # flash[:alert] = '購入に失敗しました。'
+        # redirect_to controller: "items", action: 'show'
+        redirect_to item_path, alert: "購入に失敗しました。"
+      end
+     
     end
 
   end
+
+  
 
 end
