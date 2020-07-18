@@ -2,7 +2,7 @@
   .HeaderInner
     .HeaderBlock
       %h1
-        = link_to image_tag("logo.png", alt: "FURIMA"), "#"
+        = link_to image_tag("logo.png", alt: "FURIMA"), root_path
       = form_with local: true, method: :get, class: "Form" do |form|
         .Form__field
           = form.text_field :content, placeholder: "キーワードから探す", class: "Form__text"
@@ -21,7 +21,7 @@
           %li.Register__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li.Register__mypage
-            = link_to "マイページ", user_path(current_user.id)
+            = link_to "#{current_user.nickname}のマイページ", user_path(current_user.id)
         - else
           %li.Register__login
             = link_to "ログイン", new_user_session_path

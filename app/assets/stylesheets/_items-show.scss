@@ -178,3 +178,21 @@ img {
     }
   }
 }
+.loginBtn {
+  a {
+    display: block;
+    width: 507px;
+    margin: 40px auto 0;
+    padding: 15px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #ffffff;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      opacity: .7;
+      transition-duration: .5s;
+    }
+  }
+}

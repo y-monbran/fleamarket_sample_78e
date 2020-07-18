@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', ()=>{
   let password = '#password';
   let passcheck = '#js-passcheck';
   $(passcheck).change(function(){
@@ -13,7 +13,7 @@ $(function(){
   })
 })
 
-$(function(){
+$(document).on('turbolinks:load', ()=> {
   let password = '#password2';
   let passcheck = '#js-passcheck2';
   $(passcheck).change(function(){

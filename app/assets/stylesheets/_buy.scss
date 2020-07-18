@@ -49,26 +49,50 @@
           justify-content: center;
           align-items: center;
           .textBox2 {
-            height: 80px;
             width: 343px;
             text-align: center;
             display: flex;
             justify-content: space-between;
             .itemImage {
-              width: 80px;
+              position: relative;
+              width: 130px;
               img {
-                width: 80px;
+                width: 130px;
+              }
+              .sold {
+                width: 0;
+                height: 0;
+                border-width: 60px 60px 0 0;
+                border-color: #ea352d transparent transparent transparent;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                border-style: solid;
+                &__inner {
+                  top: -48px;
+                  font-size: 14px;
+                  position: absolute;
+                  left: 0;
+                  z-index: 2;
+                  color: #fff;
+                  transform: rotate(-45deg);
+                  letter-spacing: 2px;
+                  font-weight: 600;
+                }
               }
             }
             .itemInfo {
               width: 247px;
               .itemName {
-                height: 38px;
+                margin-top: 20px;
+                padding: 0 10px;
+                font-size: 16px;
               }
               .itemPrice {
-                height: 15px;
-                font-size: 12px;
-                margin-top: 8px;
+                font-size: 14px;
+                margin-top: 15px;
               }
             }
           }
@@ -101,19 +125,27 @@
           }
         }
         &--4 {
-          height: 103px;
+          height: 160px;
           border-top: 1px solid rgb(245, 245, 245);
           display: flex;
           justify-content: center;
           align-items: center;
           .textBox4 {
-            height: 38px;
+            display: flex;
+            justify-content: space-between;
             width: 343px;
             .paymentMethod {
               height: 22px;
             }
             .cardInfo {
               height: 16px;
+            }
+            .credit_card_info {
+              &__brand {
+                img {
+                  width: 70px;
+                }
+              }
             }
           }
         }
@@ -155,13 +187,28 @@
             }
             .purchaseButton {
               #button {
-                margin: 0 auto;
+                display: block;
+                width: 100%;
                 padding: 15px 20px;
                 border: none;
                 border-radius: 5px;
+                font-size: 18px;
                 color: #fff;
                 background-color: #3CCACE;
                 text-decoration: none;
+                text-align: center;
+              }
+              .soldBtn {
+                display: block;
+                width: 100%;
+                padding: 15px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                color: #fff;
+                background-color: #ccc;
+                text-decoration: none;
+                text-align: center;
               }
             }
           }

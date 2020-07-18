@@ -361,7 +361,71 @@ $pickup_width: 880px;
     }
   }
 }
-
+.itemImage {
+  position: relative;
+  .sold {
+    width: 0;
+    height: 0;
+    border-width: 60px 60px 0 0;
+    border-color: #ea352d transparent transparent transparent;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-style: solid;
+    &__inner {
+      top: -48px;
+      font-size: 14px;
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      color: #fff;
+      transform: rotate(-45deg);
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+}
+.showImage {
+  position: relative;
+  .sold {
+    width: 0;
+    height: 0;
+    border-width: 120px 120px 0 0;
+    border-color: #ea352d transparent transparent transparent;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-style: solid;
+    &__inner {
+      top: -93px;
+      font-size: 30px;
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      color: #fff;
+      transform: rotate(-45deg);
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+}
+.soldBtn {
+  display: block;
+  width: 507px;
+  margin: 50px auto 0;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ccc;
+  text-decoration: none;
+  text-align: center;
+}
 .SellBtn {
   position: fixed;
   bottom: 32px;
