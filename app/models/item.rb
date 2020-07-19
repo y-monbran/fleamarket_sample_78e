@@ -13,15 +13,19 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :item_imgs, allow_destroy: true
 
+  validate :item_imgs_number
+  validates :name, presence: true,
+                   length: { maximum: 40 }
+  validates :introduction, presence: true,
+                           length: { maximum: 1000 }
+
+
   with_options presence: true do
-    validates :name
-    validates :introduction
     validates :price
     validates :item_condition
     validates :postage_payer
     validates :prefecture_code
     validates :preparation_day
-    validates :item_imgs
     validates :category
     validates :seller
   end
@@ -30,8 +34,6 @@ class Item < ApplicationRecord
     sale: 1,
     sold: 2
   }
-
-  validate :item_imgs_number
 
   private
 
