@@ -13,15 +13,21 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :item_imgs, allow_destroy: true
 
+  validates :item_imgs, presence: true
+  validate :item_imgs_number
+  validates :name, presence: true,
+                   length: { maximum: 40 }
+  validates :introduction, presence: true,
+                           length: { maximum: 1000 }
+  validates :price, presence: true,
+                    numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+                   
+
   with_options presence: true do
-    validates :name
-    validates :introduction
-    validates :price
     validates :item_condition
     validates :postage_payer
     validates :prefecture_code
     validates :preparation_day
-    validates :item_imgs
     validates :category
     validates :seller
   end
@@ -31,12 +37,10 @@ class Item < ApplicationRecord
     sold: 2
   }
 
-  validate :item_imgs_number
-
   private
 
   def item_imgs_number
-    errors.add(:item_imgs, "を1つ以上指定して下さい") if item_imgs.size < 1
+    errors.add(:item_imgs, "は1つ以上必要です") if item_imgs.size < 1
     errors.add(:item_imgs, "は3個までです") if item_imgs.size > 3
   end
 

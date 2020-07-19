@@ -5,6 +5,7 @@
         = image_tag "logo.png"        
     
     = form_with model: @item, class: "Sell__page__body", local: true do |f|
+      = render 'layouts/error_messages', model: f.object
       .Sell__page__body__img
         .Sell__page__body__img__label
           出品画像 

@@ -24,8 +24,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
     else
+      @item.item_imgs.new
+      @category_parent =  Category.where("ancestry is null")
       render :new
     end
   end
@@ -39,15 +40,14 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
     else
+      @category_parent =  Category.where("ancestry is null")
       render :edit
     end
   end
 
   def destroy
     @item.destroy
-    redirect_to root_path
   end
 
   private
