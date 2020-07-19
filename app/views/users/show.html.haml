@@ -35,6 +35,8 @@
       = link_to "出品する", new_item_path
     .details__payment.border
       = link_to "クレジットカード登録", new_credit_card_path
+    .details__logout.border
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
     .details__exhibitionnow.border
       = link_to "出品した商品-出品中", "#"
     .details__sale.border
