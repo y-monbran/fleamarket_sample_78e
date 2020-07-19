@@ -4,8 +4,9 @@ $main_visual: 1280px;
 $sub_width: 1020px;
 $pickup_width: 880px;
 
-* {
-  box-sizing: border-box;
+@mixin hover {
+  opacity: .7;
+  transition-duration: .5s;
 }
 
 .Sell{
@@ -36,6 +37,24 @@ $pickup_width: 880px;
         min-height: 240px;
         border-bottom: 1px solid lightgray;
         padding: 40px;
+        &__comment {
+          margin-top: 10px;
+        }
+        &__form {
+          margin-top: 15px;
+          &__remove {
+            padding: 5px 8px;
+            color: #ffffff;
+            font-size: 12px;
+            background-color: $main-color;
+            border: 4px;
+            vertical-align: middle;
+            cursor: pointer;
+            &:hover {
+              @include hover;
+            }
+          }
+        }
       }
       &__info{
         border-bottom: 1px solid lightgray;
@@ -53,6 +72,7 @@ $pickup_width: 880px;
           &__form{
             width: 540px;
             height: 126px;
+            padding: 15px;
           }
         }
       }
@@ -119,6 +139,32 @@ $pickup_width: 880px;
             border-radius: 5px;
             color: #fff;
             background-color: red;
+            &:hover {
+              @include hover;
+            }
+          }
+        }
+        .loginBtn {
+          a {
+            width: 372px;
+            margin: 0 auto;
+            padding: 12px;
+            text-align: center;
+          }
+        }
+        &__return {
+          a {
+            display: block;
+            width: 372px;
+            padding: 12px;
+            text-decoration: none;
+            color: #fff;
+            background: $main-color;
+            border-radius: 5px;
+            text-align: center;
+            &:hover {
+              @include hover;
+            }
           }
         }
         &__draft{
@@ -156,13 +202,23 @@ $pickup_width: 880px;
     justify-content: center;
     align-items: center;
   }
+  &__logo {
+    img {
+      width: 150px;
+    }
+  }
 }
 
 
 
 .required{
-  background-color: red;
-  color: white;
+  margin-left: 10px;
+  padding: 5px 8px;
+  color: #ffffff;
+  font-size: 12px;
+  background: #ea352d;
+  border: 4px;
+  vertical-align: top;
 }
 
 .form{

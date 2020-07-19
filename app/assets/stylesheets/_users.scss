@@ -316,6 +316,7 @@ $main_color: #3CCACE;
        color: #fff;
        background: $main_color;
        border-radius: 4px;
+       text-decoration: none;
        &:hover {
         @include hover;
       }
