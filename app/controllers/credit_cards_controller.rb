@@ -44,13 +44,13 @@ class CreditCardsController < ApplicationController
       @card_brand = @customer_card.brand
       case @card_brand
       when "Visa"
-        @card_src = "visa.jpeg"
+        @card_src = "visa.jpg"
       when "JCB"
         @card_src = "jcb.jpg"
       when "MasterCard"
         @card_src = "master.png"
       when "American Express"
-        @card_src = "amex.jpeg"
+        @card_src = "amex.jpg"
       end
       # 有効期限'月'を定義
       @exp_month = @customer_card.exp_month.to_s
@@ -104,13 +104,13 @@ class CreditCardsController < ApplicationController
          when "Visa"
           # 例えば、Pay.jpからとってきたカード情報の、ブランドが"Visa"だった場合は返り値として
           # (画像として登録されている)Visa.pngを返す
-           @card_src = "visa.jpeg"
+           @card_src = "visa.jpg"
            when "JCB"
-           @card_src = "jcb.jpeg"
+           @card_src = "jcb.jpg"
            when "MasterCard"
            @card_src = "master.png"
            when "American Express"
-           @card_src = "amex.jpeg"
+           @card_src = "amex.jpg"
           end
         # viewの記述を簡略化
         ## 有効期限'月'を定義

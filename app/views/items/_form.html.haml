@@ -2,7 +2,7 @@
   .Sell__page
     .Sell__page__header
       .Sell__page__header__logo
-        = image_tag "logo.png"        
+        = link_to image_tag("logo.png", alt: "FURIMA"), root_path
     
     = form_with model: @item, class: "Sell__page__body", local: true do |f|
       = render 'layouts/error_messages', model: f.object
@@ -90,14 +90,16 @@
                 販売利益
           .Sell__page__body__prices__yen
             ¥
-            = f.number_field :price, class: "Sell__page__body__prices__yen__form", placeholder: "                                 0"
+            = f.number_field :price, class: "Sell__page__body__prices__yen__form", placeholder: "0"
         .Sell__page__body__last
-          .Sell__page__body__last__send
-            = f.submit "出品する", id: "button"
-          -# .Sell__page__body__last__draft
-          -#   = submit_tag "下書きに保存", id: "button"
+          - if user_signed_in?
+            .Sell__page__body__last__send
+              = f.submit "出品する", id: "button"
+          - elsif user_signed_in? == false
+            %p.loginBtn
+              = link_to "ログインして下さい", new_user_session_path
           .Sell__page__body__last__return
-            = link_to  "もどる", "#"
+            = link_to  "戻る", root_path
           .Sell__page__body__last__note
             禁止されている行為及び出品物を必ずご確認ください。
             偽ブランド品や盗品物などの販売は犯罪であり、

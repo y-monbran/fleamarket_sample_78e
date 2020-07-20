@@ -77,7 +77,7 @@ describe Item do
       end
 
       it "categoryが空の場合は出品できない" do
-        item = build(:item ,:without_category)
+        item = build(:item ,:without)
         item.valid?
         expect(item.errors[:category]).to include("を入力してください")
       end

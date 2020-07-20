@@ -11,15 +11,20 @@ FactoryBot.define do
     seller_id{1}
 
     association :category
+    association :seller
 
     after(:build) do |i|
       i.item_imgs << [build(:item_img, item: nil)]
       i.category = build(:category)
+      # i.seller_id = build(:seller_id)
+      # i.buyer_id = build(:buyer_id)
     end
 
-    trait :without_category do
+    trait :without do
       after(:build) do |item|
         item.category = nil
+        # item.seller = nil
+        # item.buyer = nil
       end
     end
 
