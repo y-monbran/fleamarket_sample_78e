@@ -24,6 +24,7 @@ class Item < ApplicationRecord
     validates :item_imgs
     validates :category
     validates :seller
+    validates :status
   end
 
   enum status: {

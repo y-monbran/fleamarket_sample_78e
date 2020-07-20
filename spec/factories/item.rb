@@ -7,21 +7,23 @@ FactoryBot.define do
     postage_payer_id{1}
     prefecture_code_id{1}
     preparation_day_id{1}
-    # category_id{1}
-    created_at{2020-07-16}
-    updated_at{2020-07-16}
     status{1}
 
     association :category
+    association :seller
 
     after(:build) do |i|
       i.item_imgs << [build(:item_img, item: nil)]
       i.category = build(:category)
+      # i.seller_id = build(:seller_id)
+      # i.buyer_id = build(:buyer_id)
     end
 
-    trait :without_category do
+    trait :without do
       after(:build) do |item|
         item.category = nil
+        # item.seller = nil
+        # item.buyer = nil
       end
     end
 

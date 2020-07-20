@@ -53,7 +53,7 @@ describe Item do
       end
 
       it "categoryが空の場合は出品できない" do
-        item = build(:item ,:without_category)
+        item = build(:item ,:without)
         item.valid?
         expect(item.errors[:category]).to include("を入力してください")
       end
@@ -62,6 +62,12 @@ describe Item do
         item = build(:item, status: nil)
         item.valid?
         expect(item.errors[:status]).to include("を入力してください")
+      end
+
+      it "seller_idが空の場合は出品できない" do
+        item = build(:item, seller_id: nil)
+        item.valid?
+        expect(item.errors[:seller]).to include("を入力してください")
       end
     end
   end
