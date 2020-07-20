@@ -13,10 +13,10 @@
       = text_field_tag 'payment_card_no', "", class: 'cardnumber', id: "payment_card_no", placeholder: '半角数字のみ', type: "text", maxlength: "16"
     -# 事前にassets/imagesにcardsファイルを作成、中に各カード会社の画像を入れておき、呼び出す。
     .image
-      = image_tag asset_path('visa.jpeg'), class: 'visa'
-      = image_tag asset_path('master.png'), class: 'master'
-      = image_tag asset_path('jcb.jpeg'), class: 'jcb'
-      = image_tag asset_path('amex.jpeg'), class: 'amex'
+      = image_tag asset_path('images/visa.jpeg'), class: 'visa'
+      = image_tag asset_path('images/master.png'), class: 'master'
+      = image_tag asset_path('images/jcb.jpeg'), class: 'jcb'
+      = image_tag asset_path('images/amex.jpeg'), class: 'amex'
       -# = image_tag(image_path('cards/diners.png'), class: 'diners')
       -# = image_tag(image_path('cards/discover.png'), class: 'discover')
 
