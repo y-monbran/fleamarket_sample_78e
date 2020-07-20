@@ -8,6 +8,7 @@ FactoryBot.define do
     prefecture_code_id{1}
     preparation_day_id{1}
     status{1}
+    seller_id{1}
 
     association :category
     association :seller
