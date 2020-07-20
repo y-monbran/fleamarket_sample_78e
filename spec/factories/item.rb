@@ -7,10 +7,8 @@ FactoryBot.define do
     postage_payer_id{1}
     prefecture_code_id{1}
     preparation_day_id{1}
-    # category_id{1}
-    created_at{2020-07-16}
-    updated_at{2020-07-16}
     status{1}
+    seller_id{1}
 
     association :category
 
