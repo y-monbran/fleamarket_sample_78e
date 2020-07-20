@@ -20,12 +20,6 @@ describe ItemImg do
         item_img.valid?
         expect(item_img.errors[:item]).to include("を入力してください")
       end
-      
-      it "4枚以上の画像を登録できない" do
-        item_img = build(:item_img, item_id: [1, 1, 1, 1])
-        item_img.valid?
-        expect(item_img.errors[:url]).to include("は3個までです")
-      end
     end
   end
 end
