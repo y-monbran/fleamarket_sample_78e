@@ -28,6 +28,7 @@ class Item < ApplicationRecord
     validates :preparation_day
     validates :category
     validates :seller
+    validates :status
   end
 
   enum status: {

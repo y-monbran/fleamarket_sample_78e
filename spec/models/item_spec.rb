@@ -16,16 +16,40 @@ describe Item do
         expect(item.errors[:name]).to include("を入力してください")
       end
 
+      it "nameが40文字以内でないと進めない" do
+        item = build(:item, name: "a" * 41)
+        item.valid?
+        expect(item.errors[:name]).to include("は40文字以内で入力してください")
+      end
+
       it "introductionが空の場合は出品できない" do
         item = build(:item, introduction: nil)
         item.valid?
         expect(item.errors[:introduction]).to include("を入力してください")
       end
 
+      it "introductionが1000文字以内でないと進めない" do
+        item = build(:item, introduction: "a" * 1001)
+        item.valid?
+        expect(item.errors[:introduction]).to include("は1000文字以内で入力してください")
+      end
+
       it "priceが空の場合は出品できない" do
         item = build(:item, price: nil)
         item.valid?
         expect(item.errors[:price]).to include("を入力してください")
+      end
+
+      it "priceが300以上の値でないと進めない" do
+        item = build(:item, price: 299)
+        item.valid?
+        expect(item.errors[:price]).to include("は300以上の値にしてください")
+      end
+
+      it "priceが9999999以下の値でないと進めない" do
+        item = build(:item, price: 10000000)
+        item.valid?
+        expect(item.errors[:price]).to include("は9999999以下の値にしてください")
       end
 
       it "item_conditionがからの場合は出品できない" do
@@ -53,7 +77,7 @@ describe Item do
       end
 
       it "categoryが空の場合は出品できない" do
-        item = build(:item ,:without_category)
+        item = build(:item ,:without)
         item.valid?
         expect(item.errors[:category]).to include("を入力してください")
       end
@@ -62,6 +86,18 @@ describe Item do
         item = build(:item, status: nil)
         item.valid?
         expect(item.errors[:status]).to include("を入力してください")
+      end
+
+      it "seller_idが空の場合は出品できない" do
+        item = build(:item, seller_id: nil)
+        item.valid?
+        expect(item.errors[:seller]).to include("を入力してください")
+      end
+
+      it "4枚以上の画像を登録できない" do
+        item = build(:item, item_imgs: build_list(:item_img, 4))
+        item.valid?
+        expect(item.errors[:item_imgs]).to include("は3個までです")
       end
     end
   end
