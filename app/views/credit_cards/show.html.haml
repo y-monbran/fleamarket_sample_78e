@@ -13,9 +13,7 @@
           .credit_card_info__brand
             -# showメソッドで定義した@card_srcを呼び出し
             -# 画像をcardsというフォルダを作り、入れておく
-            -# = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
-            = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
-            -# = image_tag(image_path('cards/visa.jpg'), class: 'visa')
+            = image_tag "#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
           .credit_card_info__numbers
             .number
               -# Pay.jpから取得したカード番号の末尾４桁を取得
@@ -31,5 +29,3 @@
             -# 削除ボタンを作成、押すとdestroyメソッドが働くように
             = link_to credit_card_path, method: :delete, class: "destroy__function__link__btn" do 
               削除する
-      -# .payment-details
-      -#   = link_to "支払い方法について >", "", class: "payment-details__btn"

@@ -1,4 +1,6 @@
--# = render "./layouts/notifications"
+- if alert
+  .alertMessage 
+    = alert
 .card_add 
   %header.purchaseHead
     .purchaseHead__logo
@@ -17,8 +19,6 @@
       = image_tag asset_path('master.png'), class: 'master'
       = image_tag asset_path('jcb.jpg'), class: 'jcb'
       = image_tag asset_path('amex.jpg'), class: 'amex'
-      -# = image_tag(image_path('cards/diners.png'), class: 'diners')
-      -# = image_tag(image_path('cards/discover.png'), class: 'discover')
 
     .expirationdate
       .expirationdate__details

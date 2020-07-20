@@ -1,4 +1,3 @@
--# = render 'layouts/notifications'
 .pay
   %header.purchaseHead
     .purchaseHead__logo
@@ -7,9 +6,6 @@
     .main_details
       .main_details__message
         購入が完了しました。
-    -# = render "purchases/shared/purchase_product_info.html.haml", product: @product, images: @images
     %ul.purchased__links
       %li.purchased__links__TopPage
         = link_to "トップページに戻る", root_path, class: "purchased__links__TopPage__btn"
-      -# %li.purchased__links__index
-      -#   = link_to "購入商品一覧", "#", class: "purchased__links__index__btn"

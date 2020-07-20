@@ -8,11 +8,8 @@ Rails.application.routes.draw do
   end
   
   root 'items#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # resources :items
-  # resources :credit_cards, only: [:index, :new, :pay]
+
   resources :credit_cards, only: [:new, :create, :show, :destroy] do
-  # resources :credit_cards, only: [:new, :create, :show, :destroy] do
     collection do
        get 'purchase_complite'
     end

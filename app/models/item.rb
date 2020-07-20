@@ -1,6 +1,4 @@
 class Item < ApplicationRecord
-  # has_many :comments, dependent: :destroy
-  # has_many :favorites
   has_many :item_imgs, dependent: :destroy
   belongs_to :category
   extend ActiveHash::Associations::ActiveRecordExtensions
