@@ -100,3 +100,6 @@ gem 'payjp'
 
 # jquery-turbolinks
 gem 'jquery-turbolinks'
+
+# fog-aws
+gem 'fog-aws'
