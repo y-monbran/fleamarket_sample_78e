@@ -16,15 +16,11 @@ FactoryBot.define do
     after(:build) do |i|
       i.item_imgs << [build(:item_img, item: nil)]
       i.category = build(:category)
-      # i.seller_id = build(:seller_id)
-      # i.buyer_id = build(:buyer_id)
     end
 
     trait :without do
       after(:build) do |item|
         item.category = nil
-        # item.seller = nil
-        # item.buyer = nil
       end
     end
 
